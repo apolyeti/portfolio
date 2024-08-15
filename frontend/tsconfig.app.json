@@ -19,12 +19,6 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-
-    "paths": {
-        "@/*": ["./src/*"],
-        "@components/*": ["./src/components/*"],
-        "@styles/*": ["./src/styles/*"],
-    }
   },
   "include": ["src", "src/**/*.d.ts", "src/**/*.ts", "src/**/*.tsx"],
 }
