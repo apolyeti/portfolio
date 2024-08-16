@@ -26,3 +26,43 @@ h1, h2, p {
 h1 {
     font-size: 2rem;
 }
+
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+.navbar {
+    background-color: #F8F9FA;
+
+    animation: slideIn 0.5s;
+}
+
+.logo {
+    transform: scale(1);
+    transition: transform 0.1s;
+}
+
+.logo:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: transform 0.1s;
+}
+
+.slideout {
+    animation: slideOut 0.5s;
+}
