@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 :root {
   font-family: Monoid, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
@@ -12,4 +17,12 @@
 @font-face {
     font-family: Monoid;
     src: url('./assets/fonts/Monoid/MonoidNerdFont-Regular.ttf');
+}
+
+h1, h2, p {
+    color: #212529;
+}
+
+h1 {
+    font-size: 2rem;
 }
