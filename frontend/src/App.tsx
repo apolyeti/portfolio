@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 function Home() {
     const [headerLine1, setHeaderLine1] = useState('');
     const [headerLine2, setHeaderLine2] = useState('');
+    const [showPage, setShowPage] = useState(false);
     const [index, setIndex] = useState(0);
 
     
@@ -37,9 +38,21 @@ function Home() {
             }, wordDelay);
             return () => clearTimeout(timeoutId);
         }
+
+        if (index === wordsLine1.length + wordsLine2.length) {
+            // Show the page after the last word has been displayed
+            setShowPage(true);
+            
+            const timeoutId = setTimeout(() => {
+                document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
+            }, 300);
+
+            return () => clearTimeout(timeoutId);
+        }
     }, [index]);
 
     return (
+        <>
         <div className="flex flex-col justify-center h-screen">
             <div className="flex flex-col p-4 gap-4">
                 <h1 className="text-7xl" style={{ opacity: headerLine1 ? 1 : 0 }}>
@@ -50,6 +63,12 @@ function Home() {
                 </h1>
             </div>
         </div>
+        {showPage && (
+            <div className="flex flex-col justify-center h-screen" id="portfolio">
+                <h1 className="text-4xl">This is the home page</h1>
+            </div>
+        )} 
+        </>
     );
 }
 
