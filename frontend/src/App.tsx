@@ -101,18 +101,18 @@ function Home() {
                                 ME
                             </h1>
                         </div>
-                        <div className="flex flex-row justify-evenly items-center">
+                        {/* <div className="flex flex-row justify-evenly items-center">
                             <a href="https://www.linkedin.com/in/arveenazhand/">
                                 LinkedIn
                             </a>
                             <a href="https://github.com/apolyeti">
                                 GitHub
                             </a>
-                        </div>
+                        </div> */}
                     </div>
                     <div className="flex flex-col w-2/5 text-left h-full gap-4">
                         <p className="">
-                            My name is Arveen Azhand, a {age}-year-old software developer based in Seattle, WA.
+                            I'm Arveen Azhand, a {age}-year-old software developer based in Seattle, WA.
                         </p>
                         <p>
                             I'm currently attending the University of California, Santa Cruz, pursuing a Bachelor of Science in Computer Science.
