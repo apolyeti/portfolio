@@ -77,7 +77,7 @@ function Home() {
             <div className="flex flex-col justify-between h-screen p-4" id="home">
                 <div className="flex" id="spacer"></div>
                 <div className="flex flex-row justify-between">
-                    <div className="flex flex-col justify-center gap-4 h-full">
+                    <div className="flex flex-col justify-center gap-4 px-4 h-full">
                         <h1 className="text-7xl text-left" style={{ opacity: headerLine1 ? 1 : 0 }}>
                             {headerLine1 || 'WELCOME TO'}
                         </h1>

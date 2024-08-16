@@ -18,8 +18,13 @@ export default function Skills() {
                 </div>
 
                 {/* Center SVG with horizontal dashed circle */}
-                <div className="flex flex-col h-full justify-center text-center">
-                    <Circle />
+                <div className="flex flex-col h-full justify-center text-center gap-4">
+                    <h1 className="text-5xl">
+                        MY
+                    </h1>
+                    <h1 className="text-5xl">
+                        SKILLS
+                    </h1>
                 </div>
 
                 {/* Right icons */}
