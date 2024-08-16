@@ -54,13 +54,27 @@ function Home() {
     return (
         <>
         <div className="flex flex-col justify-between h-screen p-4">
-            <div className="flex flex-col justify-center gap-4 h-full">
-                <h1 className="text-7xl text-left" style={{ opacity: headerLine1 ? 1 : 0 }}>
-                    {headerLine1 || 'WELCOME TO'}
-                </h1>
-                <h1 className="text-7xl text-left" style={{ opacity: headerLine2 ? 1 : 0 }}>
-                    {headerLine2 || 'MY WEBSITE'}
-                </h1>
+            <div className="flex placeholder"></div>
+            <div className="flex flex-row justify-between">
+                <div className="flex flex-col justify-center gap-4 h-full">
+                    <h1 className="text-7xl text-left" style={{ opacity: headerLine1 ? 1 : 0 }}>
+                        {headerLine1 || 'WELCOME TO'}
+                    </h1>
+                    <h1 className="text-7xl text-left" style={{ opacity: headerLine2 ? 1 : 0 }}>
+                        {headerLine2 || 'MY WEBSITE'}
+                    </h1>
+                </div>
+                <div 
+                    className="flex flex-row justify-center w-2/5 h-full items-center border-black border-2"
+                    style={{ opacity: showPage ? 1 : 0 }}
+                >
+                    <h1>
+                        test
+                    </h1>
+                    <h1>
+                        asdasd
+                    </h1>
+                </div>
             </div>
             <button style={{opacity: showPage ? 1 : 0}} disabled={!showPage} onClick={scrollDown}>
                 <p className="text-2xl">
