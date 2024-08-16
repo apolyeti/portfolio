@@ -81,7 +81,37 @@ function Home() {
         </div>
         {showPage && (
             <div className="flex flex-col justify-center h-screen" id="portfolio">
-                <h1 className="text-4xl">This is the home page</h1>
+                <div className="flex flex-row items-center justify-center">
+                    <div className="flex flex-col w-1/4 justify-evenly text-center h-full gap-2">
+                        <div>
+                            <h1 className="text-5xl py-7">
+                                ABOUT
+                            </h1>
+                            <h1 className="text-5xl">
+                                ME
+                            </h1>
+                        </div>
+                        <div className="p-4 flex flex-row justify-evenly items-center">
+                            <a href="https://www.linkedin.com/in/arveenazhand/">
+                                LinkedIn
+                            </a>
+                            <a href="https://github.com/apolyeti">
+                                GitHub
+                            </a>
+                        </div>
+                    </div>
+                    <div className="flex flex-col w-1/4 text-left h-full gap-4">
+                        <p className="">
+                            My name is Arveen Azhand, a 20-year-old software developer based in Seattle, WA.
+                        </p>
+                        <p>
+                            I'm currently attending the University of California, Santa Cruz, pursuing a Bachelor of Science in Computer Science.
+                        </p>
+                        <p className="">
+                            Through my journey in the world of software development, I've had many different interests and passions, giving me a wide range of skills and experiences.
+                        </p>
+                    </div>
+                </div>
             </div>
         )}
         </>
