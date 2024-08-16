@@ -6,7 +6,6 @@ function Home() {
     const [showPage, setShowPage] = useState(false);
     const [index, setIndex] = useState(0);
 
-    
     const initialDelay = 900; // Initial delay before starting the animation
     const wordDelay = 300;    // Delay between each word
 
@@ -42,32 +41,38 @@ function Home() {
         if (index === wordsLine1.length + wordsLine2.length) {
             // Show the page after the last word has been displayed
             setShowPage(true);
-            
-            const timeoutId = setTimeout(() => {
-                document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' });
-            }, 300);
-
-            return () => clearTimeout(timeoutId);
         }
     }, [index]);
 
+    const scrollDown = () => {
+        const portfolio = document.getElementById('portfolio');
+        if (portfolio) {
+            portfolio.scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
     return (
         <>
-        <div className="flex flex-col justify-center h-screen">
-            <div className="flex flex-col p-4 gap-4">
-                <h1 className="text-7xl" style={{ opacity: headerLine1 ? 1 : 0 }}>
+        <div className="flex flex-col justify-between h-screen p-4">
+            <div className="flex flex-col justify-center gap-4 h-full">
+                <h1 className="text-7xl text-left" style={{ opacity: headerLine1 ? 1 : 0 }}>
                     {headerLine1 || 'WELCOME TO'}
                 </h1>
-                <h1 className="text-7xl" style={{ opacity: headerLine2 ? 1 : 0 }}>
+                <h1 className="text-7xl text-left" style={{ opacity: headerLine2 ? 1 : 0 }}>
                     {headerLine2 || 'MY WEBSITE'}
                 </h1>
             </div>
+            <button style={{opacity: showPage ? 1 : 0}} disabled={!showPage} onClick={scrollDown}>
+                <p className="text-2xl">
+                    LEARN MORE
+                </p>
+            </button>
         </div>
         {showPage && (
             <div className="flex flex-col justify-center h-screen" id="portfolio">
                 <h1 className="text-4xl">This is the home page</h1>
             </div>
-        )} 
+        )}
         </>
     );
 }
