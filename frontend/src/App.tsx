@@ -5,11 +5,20 @@ import Sphere from './components/Sphere';
 function Home() {
     const [headerLine1, setHeaderLine1] = useState('');
     const [headerLine2, setHeaderLine2] = useState('');
+    const [age, setAge] = useState(0);
     const [showPage, setShowPage] = useState(false);
     const [index, setIndex] = useState(0);
 
     const initialDelay = 900; // Initial delay before starting the animation
     const wordDelay = 300;    // Delay between each word
+
+    useEffect(() => {
+        const birthDate = new Date('2003-12-12');
+        const today = new Date();
+        const ageDiff = today.getTime() - birthDate.getTime();
+        const ageDate = new Date(ageDiff);
+        setAge(Math.abs(ageDate.getUTCFullYear() - 1970));
+    }, []);
 
     useEffect(() => {
         const wordsLine1 = ['HELLO,','I'];
@@ -80,6 +89,7 @@ function Home() {
             </button>
         </div>
         {showPage && (
+            <>
             <div className="flex flex-col justify-center h-screen" id="portfolio">
                 <div className="flex flex-row items-center justify-center">
                     <div className="flex flex-col w-1/4 justify-evenly text-center h-full gap-2">
@@ -91,7 +101,7 @@ function Home() {
                                 ME
                             </h1>
                         </div>
-                        <div className="p-4 flex flex-row justify-evenly items-center">
+                        <div className="flex flex-row justify-evenly items-center">
                             <a href="https://www.linkedin.com/in/arveenazhand/">
                                 LinkedIn
                             </a>
@@ -100,9 +110,9 @@ function Home() {
                             </a>
                         </div>
                     </div>
-                    <div className="flex flex-col w-1/4 text-left h-full gap-4">
+                    <div className="flex flex-col w-2/5 text-left h-full gap-4">
                         <p className="">
-                            My name is Arveen Azhand, a 20-year-old software developer based in Seattle, WA.
+                            My name is Arveen Azhand, a {age}-year-old software developer based in Seattle, WA.
                         </p>
                         <p>
                             I'm currently attending the University of California, Santa Cruz, pursuing a Bachelor of Science in Computer Science.
@@ -111,8 +121,32 @@ function Home() {
                             Through my journey in the world of software development, I've had many different interests and passions, giving me a wide range of skills and experiences.
                         </p>
                     </div>
+                    <div className="spacer">
+                    </div>
                 </div>
             </div>
+            <div className="flex flex-col justify-center h-screen">
+                <div className="flex flex-row items-center justify-center">
+                    <div className="flex flex-col w-1/4 justify-evenly text-center h-full gap-2">
+                        <div>
+                            <h1 className="text-5xl py-7">
+                                MY
+                            </h1>
+                            <h1 className="text-5xl">
+                                WORK
+                            </h1>
+                        </div>
+                        <h2 className="py-2">
+                            </h2>
+                        <div className="flex flex-row justify-evenly items-center">
+                            <a href="https://www.linkedin.com/in/arveenazhand/">
+                                LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </>
         )}
         </>
     );
