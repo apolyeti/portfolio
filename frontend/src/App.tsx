@@ -12,8 +12,8 @@ function Home() {
     const wordDelay = 300;    // Delay between each word
 
     useEffect(() => {
-        const wordsLine1 = ['WELCOME', 'TO'];
-        const wordsLine2 = ['MY', 'WEBSITE'];
+        const wordsLine1 = ['HELLO,','I'];
+        const wordsLine2 = ['AM', 'ARVEEN'];
         if (index === 0) {
             // Start the first word with an initial delay
             const timeoutId = setTimeout(() => {
