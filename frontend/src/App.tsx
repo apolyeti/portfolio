@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import Sphere from './components/Sphere';
+
 
 function Home() {
     const [headerLine1, setHeaderLine1] = useState('');
@@ -54,7 +56,7 @@ function Home() {
     return (
         <>
         <div className="flex flex-col justify-between h-screen p-4">
-            <div className="flex placeholder"></div>
+            <div className="flex" id="spacer"></div>
             <div className="flex flex-row justify-between">
                 <div className="flex flex-col justify-center gap-4 h-full">
                     <h1 className="text-7xl text-left" style={{ opacity: headerLine1 ? 1 : 0 }}>
@@ -65,15 +67,10 @@ function Home() {
                     </h1>
                 </div>
                 <div 
-                    className="flex flex-row justify-center w-2/5 h-full items-center border-black border-2"
+                    className="flex flex-row justify-evenly w-2/5 h-full items-center border-black border-2"
                     style={{ opacity: showPage ? 1 : 0 }}
                 >
-                    <h1>
-                        test
-                    </h1>
-                    <h1>
-                        asdasd
-                    </h1>
+                    <Sphere />
                 </div>
             </div>
             <button style={{opacity: showPage ? 1 : 0}} disabled={!showPage} onClick={scrollDown}>
