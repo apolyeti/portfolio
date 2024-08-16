@@ -31,7 +31,6 @@ const AsciiEffectComponent: React.FC<AsciiEffectComponentProps> = ({
       scene = new THREE.Scene();
       scene.background = new THREE.Color(0xF8F9FA); // Background color set to #F8F9FA
 
-      // Adjusted light intensity to make the scene less bright
       const pointLight1 = new THREE.PointLight(0xffffff, 1.5, 0, 0);
       pointLight1.position.set(500, 500, 500);
       scene.add(pointLight1);
