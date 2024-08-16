@@ -48,7 +48,6 @@ h1 {
 
 .navbar {
     background-color: #F8F9FA;
-
     animation: slideIn 0.5s;
 }
 
@@ -65,4 +64,72 @@ h1 {
 
 .slideout {
     animation: slideOut 0.5s;
+}
+
+/* Rotating circle animation */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate-circle {
+    animation: rotate 10s linear infinite;
+}
+
+/* Slide in from left */
+@keyframes slideInLeft {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-left {
+    animation: slideInLeft 1s ease-out;
+}
+
+/* Slide in from right */
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide-in-right {
+    animation: slideInRight 1s ease-out;
+}
+
+@keyframes drawCircle {
+    from {
+        stroke-dashoffset: 100%;
+    }
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes rotateCircle {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.draw-and-rotate {
+    animation: drawCircle 2s ease-in-out forwards, rotateCircle 10s linear infinite;
 }

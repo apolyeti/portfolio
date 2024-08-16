@@ -5,13 +5,14 @@ export default function NavBar() {
     const [lastScrollY, setLastScrollY] = useState(0);
 
     useEffect(() => {
+        const threshHold = 600;
         const handleScroll = () => {
             const currentScrollY = window.scrollY;
 
-            if (currentScrollY > 0 && currentScrollY > lastScrollY) {
+            if (currentScrollY > threshHold && currentScrollY > lastScrollY) {
                 // User is scrolling down, show the navbar
                 setIsVisible(true);
-            } else if (currentScrollY <= 0) {
+            } else if (currentScrollY <= threshHold) {
                 // User is at the top, hide the navbar
                 setIsVisible(false);
             }
@@ -35,7 +36,7 @@ export default function NavBar() {
 
     return (
         <div
-            className={`fixed top-0 left-0 w-full shadow z-50 h-20 bg-white transition-transform duration-500 ${
+            className={`fixed top-0 left-0 w-full z-50 h-20 transition-transform duration-500 ${
                 isVisible ? 'translate-y-0' : '-translate-y-full'
             }`}
         >
@@ -46,6 +47,12 @@ export default function NavBar() {
                     className="logo h-full"
                     onClick={() => handleScrollToSection('home')}
                 />
+                <div className="flex flex-row gap-4 px-4">
+                    <button onClick={() => handleScrollToSection('home')}>HOME</button>
+                    <button onClick={() => handleScrollToSection('portfolio')}>ABOUT ME</button>
+                    <button onClick={() => handleScrollToSection('skills')}>WORK</button>
+                    <button onClick={() => handleScrollToSection('contact')}>CONTACT</button>
+                </div>
             </div>
         </div>
     );

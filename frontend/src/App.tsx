@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import Sphere from './components/Sphere';
 import NavBar from './components/NavBar';
+import Skills from './components/Skills';
 
 function Home() {
     const [headerLine1, setHeaderLine1] = useState('');
@@ -111,7 +112,7 @@ function Home() {
                                     </h1>
                                 </div>
                             </div>
-                            <div className="flex flex-col w-2/5 text-left h-full gap-4">
+                            <div className="flex flex-col w-1/3 text-left h-full gap-4">
                                 <p className="">
                                     I'm Arveen Azhand, a {age}-year-old software developer based in Seattle, WA.
                                 </p>
@@ -125,25 +126,7 @@ function Home() {
                             <div className="spacer"></div>
                         </div>
                     </div>
-                    <div className="flex flex-col justify-center h-screen">
-                        <div className="flex flex-row items-center justify-center">
-                            <div id="work" className="flex flex-col w-1/4 justify-evenly text-center h-full gap-2">
-                                <div>
-                                    <h1 className="text-5xl py-7">
-                                        MY
-                                    </h1>
-                                    <h1 className="text-5xl">
-                                        WORK
-                                    </h1>
-                                </div>
-                                <div className="flex flex-row justify-evenly items-center">
-                                    <a href="https://www.linkedin.com/in/arveenazhand/">
-                                        LinkedIn
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <Skills />
                 </>
             )}
         </>
