@@ -19,6 +19,10 @@ import { IoGitBranchOutline } from "react-icons/io5";
 import { GoDatabase } from "react-icons/go";
 
 
+import useMeasure from 'react-use-measure';
+import { animate, useMotionValue, motion } from 'framer-motion';
+
+
 
 
 
@@ -31,16 +35,18 @@ import { GoDatabase } from "react-icons/go";
 
 
 export default function Skills() {
-    useEffect(() => {
-        // Optionally add any additional effect or state management here if needed
-    }, []);
+
 
     return (
         <div className="flex flex-col justify-center h-screen relative">
+            <div className="cover top h-1/4 absolute top-0 left-0 right-0 z-10">
+            </div>
+            <div className="cover bottom h-1/4 absolute bottom-0 left-0 right-0 z-10">
+            </div>
             <div className="flex flex-row h-full justify-between">
                 {/* Left icons */}
-                <div className="flex flex-col h-full justify-center p-4 gap-4 w-full items-center">
-                    <div className="flex flex-col items-center gap-4">
+                <div className="flex flex-col h-full p-4 gap-4 w-full items-center overflow-hidden">
+                    <div className="flex flex-col items-center gap-4 h-full justify-center mt-36">
                         <TechStackIcon name="JavaScript">
                             <RiJavascriptLine size={40} />
                         </TechStackIcon>
@@ -57,7 +63,7 @@ export default function Skills() {
                             <PiFileCLight size={40} />
                         </TechStackIcon>
                     </div>
-                    <div className="flex flex-col items-center gap-4">
+                    <div className="flex flex-col items-center gap-4 mt-36">
                         <TechStackIcon name="C++">
                             <PiFileCppLight size={40} />
                         </TechStackIcon>
@@ -87,8 +93,8 @@ export default function Skills() {
                 </div>
 
                 {/* Right icons */}
-                <div className="flex flex-col h-full justify-center p-4 gap-4 items-center w-full">
-                    <div className="flex flex-col items-center gap-4">
+                <div className="flex flex-col h-full p-4 gap-4 items-center w-full overflow-hidden">
+                    <div className="flex flex-col h-full items-center gap-4 mt-36">
                         <TechStackIcon name="Node.js">
                             <FaNodeJs size={40} />
                         </TechStackIcon>
@@ -105,7 +111,7 @@ export default function Skills() {
                             <GoDatabase size={40} />
                         </TechStackIcon>
                     </div>
-                    <div className="flex flex-col items-center gap-4">
+                    <div className="flex flex-col items-center gap-4 mt-36">
                         <TechStackIcon name="Git">
                             <IoGitBranchOutline size={40} />
                         </TechStackIcon>

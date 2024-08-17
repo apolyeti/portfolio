@@ -120,7 +120,7 @@ function Home() {
                                     I'm currently attending the University of California, Santa Cruz, pursuing a Bachelor of Science degree in Computer Science.
                                 </p>
                                 <p className="">
-                                    Through my journey in the world of software development, I've had many different interests and passions, giving me a wide range of skills and experiences.
+                                    Throughout my journey in the world of software development, I've had many different interests and passions, giving me a wide range of skills and experiences.
                                 </p>
                             </div>
                             <div className="spacer"></div>

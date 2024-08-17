@@ -133,3 +133,12 @@ h1 {
 .draw-and-rotate {
     animation: drawCircle 2s ease-in-out forwards, rotateCircle 10s linear infinite;
 }
+
+.cover.top {
+    background: linear-gradient(to bottom, #F8F9FA 70%, transparent);
+}
+
+.cover.bottom {
+    background: linear-gradient(to top, #F8F9FA 70%, transparent);
+}
+
