@@ -1,12 +1,13 @@
+
 interface TechStackIconProps {
     name: string;
-    icon: string;
+    children?: React.ReactNode;
 }
 
-export default function TechStackIcon({ name, icon }: TechStackIconProps) {
+export default function TechStackIcon({ name, children }: TechStackIconProps) {
     return (
-        <div className="flex flex-col items-center gap-1">
-            <img src={icon} alt={name} className="w-12 h-12" />
+        <div className="flex flex-col items-center gap-2">
+            {children}
             <p className="text-sm">{name}</p>
         </div>
     );
