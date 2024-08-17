@@ -94,7 +94,7 @@ export default function Skills() {
 
                 {/* Right icons */}
                 <div className="flex flex-col h-full p-4 gap-4 items-center w-full overflow-hidden">
-                    <div className="flex flex-col h-full items-center gap-4 mt-36">
+                    <div className="flex flex-col h-full items-center gap-4">
                         <TechStackIcon name="Node.js">
                             <FaNodeJs size={40} />
                         </TechStackIcon>
@@ -111,7 +111,7 @@ export default function Skills() {
                             <GoDatabase size={40} />
                         </TechStackIcon>
                     </div>
-                    <div className="flex flex-col items-center gap-4 mt-36">
+                    <div className="flex flex-col items-center gap-4">
                         <TechStackIcon name="Git">
                             <IoGitBranchOutline size={40} />
                         </TechStackIcon>
