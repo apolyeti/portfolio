@@ -8,7 +8,7 @@ interface AsciiEffectComponentProps {
 }
 
 const AsciiEffectComponent: React.FC<AsciiEffectComponentProps> = ({
-  width = '400px',
+  width = '450px',
   height = '300px',
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
