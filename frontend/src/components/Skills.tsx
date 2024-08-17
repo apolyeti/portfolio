@@ -4,7 +4,6 @@ import { RiNextjsLine, RiJavascriptLine } from "react-icons/ri";
 import { TbBrandTypescript } from "react-icons/tb";
 import { FaNodeJs } from "react-icons/fa6";
 import { FaDocker } from "react-icons/fa";
-import { GrReactjs } from "react-icons/gr";
 import { PiFileCLight, PiFileCppLight, PiFileCSharpLight } from "react-icons/pi";
 import { BiLogoGoLang } from "react-icons/bi";
 import { AiOutlinePython } from "react-icons/ai";
