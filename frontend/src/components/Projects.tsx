@@ -51,9 +51,26 @@ export default function Projects() {
                     </div>
                 </Card>
                 <Card cover="RECISCALER">
-                    <p className="p-3">
-                        reciscaler desc
-                    </p>
+                    <div className="p-3 flex flex-col justify-evenly text-sm">
+                        <p>
+                            Full-stack web app using
+                        </p>
+                        <p>
+                            web scraping technology to 
+                        </p>
+                        <p>
+                            quickly obtain ingredient 
+                        </p>
+                        <p>
+                            quantities for recipes and 
+                        </p>
+                        <p>
+                            scale them to desired
+                        </p>
+                        <p>
+                            serving sizes
+                        </p>
+                    </div>
                 </Card>
             </div>
         </div>
