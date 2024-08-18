@@ -19,6 +19,13 @@
     src: url('./assets/fonts/Monoid/MonoidNerdFont-Regular.ttf');
 }
 
+/* italic version */
+@font-face {
+    font-family: Monoid;
+    src: url('./assets/fonts/Monoid/MonoidNerdFont-Italic.ttf');
+    font-style: italic;
+}
+
 h1, h2, p {
     color: #212529;
 }
