@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import * as THREE from 'three';
-import { AsciiEffect } from 'three/examples/jsm/effects/AsciiEffect';
+import { AsciiEffect } from 'three/examples/jsm/effects/AsciiEffect.js';
 
 interface AsciiEffectComponentProps {
   width?: string;
