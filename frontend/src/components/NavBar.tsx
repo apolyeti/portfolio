@@ -48,8 +48,13 @@ export default function NavBar() {
                     onClick={() => handleScrollToSection('home')}
                 />
                 <div className="flex flex-row gap-4 px-4">
-                    <button onClick={() => handleScrollToSection('portfolio')}>ABOUT ME</button>
-                    <button onClick={() => handleScrollToSection('skills')}>WORK</button>
+                    <button 
+                        onClick={() => handleScrollToSection('portfolio')}
+                        className="navbar-button"
+                    >
+                        ABOUT ME
+                    </button>
+                    <button onClick={() => handleScrollToSection('projects')}>WORK</button>
                     <button onClick={() => handleScrollToSection('contact')}>CONTACT</button>
                 </div>
             </div>

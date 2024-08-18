@@ -1,13 +1,25 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 
-interface CardProps {
-    cover: string;
+interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode;
 }
 
-export default function Card({ cover, children }: CardProps) {
+export default function Card({ children }: CardProps) {
 
     const [isHovered, setIsHovered] = useState(false);
+
+    const childrenArray = React.Children.toArray(children).filter(
+        (child): child is React.ReactElement => React.isValidElement(child)
+    );
+
+    const cardCover = childrenArray.find(
+        (child) => child.type === Card.Cover
+    );
+    const cardDesc = childrenArray.find(
+        (child) => child.type === Card.Desc
+    );
+
+
 
     return (
         <div 
@@ -22,9 +34,7 @@ export default function Card({ cover, children }: CardProps) {
                     transition: 'width 0.3s',
                 }}
             >
-                <p className="p-8">
-                    {cover}
-                </p>
+                {cardCover && cardCover.props.children}
             </div>
             <div 
                 className="flex flex-col justify-center text-left overflow-hidden text-nowrap"
@@ -32,12 +42,28 @@ export default function Card({ cover, children }: CardProps) {
                     width: !isHovered ? '0%' : '67%',
                     borderLeft: isHovered? '1px solid #212429' : 'none',
                     borderColor: isHovered ? '#212429' : 'transparent',
-                    transition: 'width 0.3s, border-left 0.1s',
+                    transition: 'width 0.3s',
 
                 }}
             >
-                {children}
+                {cardDesc && cardDesc.props.children}
             </div>
         </div>
     );
+}
+
+Card.Cover = function Cover({ children }: { children: React.ReactNode }) {
+    return (
+        <div>
+            {children}
+        </div>
+    )
+}
+
+Card.Desc = function Desc({ children }: { children: React.ReactNode }) {
+    return (
+        <div>
+            {children}
+        </div>
+    )
 }
