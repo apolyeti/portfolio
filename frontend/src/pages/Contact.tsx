@@ -7,16 +7,22 @@ import { PiLinkedinLogoLight, PiGithubLogoLight, PiGraduationCapLight } from "re
 export default function Contact() {
     return (
         <>
-            <div>
-                <div className="flex flex-row items-center justify-between h-full p-2">
+        <div
+            className="fixed top-0 left-0 w-full z-50 h-20 transition-transform duration-500"
+        >
+            <div className="flex flex-row items-center justify-between h-full p-2">
+                <a
+                    href="/"
+                    className="block h-full"
+                >
                     <img
                         src="/logotransparent.svg"
                         alt="Logo"
                         className="logo h-full"
-                        onClick={() => document.open('/')}
                     />
-                </div>
+                </a>
             </div>
+        </div>
             <div className="flex flex-row items-center justify-center h-screen gap-8">
                 <div className="flex flex-col w-1/3 text-center">
                     <h1 className="text-4xl">CONTACT</h1>
