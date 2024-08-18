@@ -10,7 +10,7 @@ export default function Projects() {
                             Individual Tutor and Reader
                         </p>
                         <p className="italic">
-                            January 2024 - Present
+                            January 2024 — Present
                         </p>
                     </div>
                 </Card>
@@ -22,16 +22,33 @@ export default function Projects() {
             </div>
             <div className="flex flex-row items-center justify-evenly gap-4 w-full h-2/5 p-4">
                 <Card cover="LET IT OUT">
-                    <div className="p-3 flex flex-col items-center justify-evenly">
-                    <p className="">
-                        CalHacks 10.0 Submission
-                    </p>
+                    <div className="p-3 flex flex-col justify-evenly text-sm">
+                        <p className="">
+                            CalHacks 10.0 Submission
+                        </p>
+                        <p className="">
+                            AI assisted journaling tool
+                        </p>
+                        <p>
+                            using sentiment analysis
+                        </p>
                     </div>
                 </Card>
                 <Card cover="SPARKFIT">
-                    <p className="p-3">
-                        sparkfit desc
-                    </p>
+                    <div className="p-3 flex flex-col justify-evenly text-sm">
+                        <p className="">
+                            AI assisted outfit planner
+                        </p>
+                        <p>
+                            based on local weather data
+                        </p>
+                        <p>
+                            using image recognition
+                        </p>
+                        <p>
+                            and fashion datasets
+                        </p>
+                    </div>
                 </Card>
                 <Card cover="RECISCALER">
                     <p className="p-3">
