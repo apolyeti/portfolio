@@ -1,4 +1,4 @@
-# build frontend
+# Stage 1: Build the frontend
 FROM node:18 as frontend
 
 WORKDIR /frontend
@@ -6,10 +6,10 @@ WORKDIR /frontend
 COPY frontend/package*.json ./
 RUN npm install
 
-COPY frontend ./
+COPY frontend/ ./
 RUN npm run build
 
-# build backend
+# Stage 2: Set up the backend with frontend build
 FROM node:18 as backend
 
 WORKDIR /backend
@@ -17,10 +17,14 @@ WORKDIR /backend
 COPY backend/package*.json ./
 RUN npm install
 
-COPY backend ./
+# Copy the built frontend to the backend public directory
+COPY --from=frontend /frontend/dist /backend/public/dist
+COPY --from=frontend /frontend/index.html /backend/public
 
-# expose port 3000
+COPY backend/ ./
+
+# Expose port 3000
 EXPOSE 3000
 
-# start server
+# Start the server
 CMD ["npm", "start"]
