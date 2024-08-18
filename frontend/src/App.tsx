@@ -23,6 +23,27 @@ function Home() {
     }, []);
 
     useEffect(() => {
+        const fragment = window.location.hash;
+
+        if (fragment) {
+            setHeaderLine1('HELLO, I');
+            setHeaderLine2('AM ARVEEN');
+            setIndex(4);
+            setShowPage(true);
+
+            // go to fragment
+            const element = document.getElementById(fragment.substring(1));
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+
+            setTimeout(() => {
+                window.history.replaceState(null, '', window.location.pathname);
+            }, 1000);
+
+            return;
+        }
+        
         const wordsLine1 = ['HELLO,', 'I'];
         const wordsLine2 = ['AM', 'ARVEEN'];
 
@@ -122,6 +143,9 @@ function Home() {
                                 </p>
                                 <p className="">
                                     Throughout my journey in the world of software development, I've had many different interests and passions, giving me a wide range of skills and experiences.
+                                </p>
+                                <p>
+                                    As of now, my specialty lies in system design and optimization, but I'm always looking to learn and grow in new areas, as well as excel in the ones I'm already familiar with.
                                 </p>
                             </div>
                             <div className="spacer"></div>

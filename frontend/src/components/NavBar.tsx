@@ -55,7 +55,11 @@ export default function NavBar() {
                         ABOUT ME
                     </button>
                     <button onClick={() => handleScrollToSection('projects')}>WORK</button>
-                    <button onClick={() => handleScrollToSection('contact')}>CONTACT</button>
+                    <a
+                        href="/contact"
+                    >
+                        CONTACT
+                    </a>
                 </div>
             </div>
         </div>
