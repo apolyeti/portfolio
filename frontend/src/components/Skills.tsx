@@ -36,6 +36,129 @@ import { animate, useMotionValue, motion } from 'framer-motion';
 
 export default function Skills() {
 
+    const leftIcons = [
+        {
+            name: "JavaScript",
+            icon: <RiJavascriptLine size={40} />
+        },
+        {
+            name: "TypeScript",
+            icon: <TbBrandTypescript size={40} />
+        },
+        {
+            name: "Python",
+            icon: <AiOutlinePython size={40} />
+        },
+        {
+            name: "Golang",
+            icon: <BiLogoGoLang size={40} />
+        },
+        {
+            name: "C",
+            icon: <PiFileCLight size={40} />
+        },
+        {
+            name: "C++",
+            icon: <PiFileCppLight size={40} />
+        },
+        {
+            name: "C#",
+            icon: <PiFileCSharpLight size={40} />
+        },
+        {
+            name: "Java",
+            icon: <AiOutlineJava size={40} />
+        },
+        {
+            name: "Swift",
+            icon: <DiSwift size={40} />
+        },
+        {
+            name: "Rust",
+            icon: <FaRust size={40} />
+        }
+    ]
+
+    const rightIcons = [
+        {
+            name: "Node.js",
+            icon: <FaNodeJs size={40} />
+        },
+        {
+            name: "Next.js",
+            icon: <RiNextjsLine size={40} />
+        },
+        {
+            name: "Docker",
+            icon: <FaDocker size={40} />
+        },
+        {
+            name: "AWS",
+            icon: <FaAws size={40} />
+        },
+        {
+            name: "SQL/NoSQL",
+            icon: <GoDatabase size={40} />
+        },
+        {
+            name: "Git",
+            icon: <IoGitBranchOutline size={40} />
+        },
+        {
+            name: "Flask",
+            icon: <SiFlask size={40} />
+        },
+        {
+            name: "TensorFlow",
+            icon: <SiTensorflow size={40} />
+        },
+        {
+            name: "PyTorch",
+            icon: <SiPytorch size={40} />
+        },
+        {
+            name: "Hugging Face",
+            icon: <SiHuggingface size={40} />
+        }
+    ]
+
+    const [leftRef, { height: leftHeight }] = useMeasure();
+    const [rightRef, { height: rightHeight }] = useMeasure();
+
+    const leftY = useMotionValue(0);
+    const rightY = useMotionValue(0);
+
+    useEffect(() => {
+        if (leftHeight > 0) {
+            const finalPosition = -leftHeight - 135;
+            const controls = animate(leftY, [0, finalPosition], {
+                ease: 'linear',
+                duration: 25,
+                repeat: Infinity,
+                repeatType: 'loop',
+                repeatDelay: 0
+            });
+
+            return controls.stop;
+        }
+    }, [leftHeight, leftY]);
+
+    useEffect(() => {
+        if (rightHeight > 0) {
+            const finalPosition = rightHeight / 2 + 135;
+            const controls = animate(rightY, [0, finalPosition], {
+                ease: 'linear',
+                duration: 5,
+                repeat: Infinity,
+                repeatType: 'loop',
+                repeatDelay: 0
+            });
+
+            return controls.stop;
+        }
+    }, [rightHeight, rightY]);
+
+
 
     return (
         <div className="flex flex-col justify-center h-screen relative">
@@ -46,40 +169,17 @@ export default function Skills() {
             <div className="flex flex-row h-full justify-between">
                 {/* Left icons */}
                 <div className="flex flex-col h-full p-4 gap-4 w-full items-center overflow-hidden">
-                    <div className="flex flex-col items-center gap-4 h-full justify-center mt-36">
-                        <TechStackIcon name="JavaScript">
-                            <RiJavascriptLine size={40} />
-                        </TechStackIcon>
-                        <TechStackIcon name="TypeScript">
-                            <TbBrandTypescript size={40} />
-                        </TechStackIcon>
-                        <TechStackIcon name="Python">
-                            <AiOutlinePython size={40} />
-                        </TechStackIcon>
-                        <TechStackIcon name="Golang">
-                            <BiLogoGoLang size={40} />
-                        </TechStackIcon>
-                        <TechStackIcon name="C">
-                            <PiFileCLight size={40} />
-                        </TechStackIcon>
-                    </div>
-                    <div className="flex flex-col items-center gap-4 mt-36">
-                        <TechStackIcon name="C++">
-                            <PiFileCppLight size={40} />
-                        </TechStackIcon>
-                        <TechStackIcon name="C#">
-                            <PiFileCSharpLight size={40} />
-                        </TechStackIcon>
-                        <TechStackIcon name="Java">
-                            <AiOutlineJava size={40} />
-                        </TechStackIcon>
-                        <TechStackIcon name="Swift">
-                            <DiSwift size={40} />
-                        </TechStackIcon>
-                        <TechStackIcon name="Rust">
-                            <FaRust size={40} />
-                        </TechStackIcon>
-                    </div>
+                    <motion.div 
+                        className="flex flex-col items-center gap-4 h-full" 
+                        ref={leftRef}
+                        style={{ y: leftY }}
+                    >
+                        {[...leftIcons, ...leftIcons, ...leftIcons].map((icon, index) => (
+                            <TechStackIcon key={index} name={icon.name}>
+                                {icon.icon}
+                            </TechStackIcon>
+                        ))}
+                    </motion.div>
                 </div>
 
                 {/* Center SVG with horizontal dashed circle */}
@@ -93,41 +193,18 @@ export default function Skills() {
                 </div>
 
                 {/* Right icons */}
-                <div className="flex flex-col h-full p-4 gap-4 items-center w-full overflow-hidden">
-                    <div className="flex flex-col h-full items-center gap-4">
-                        <TechStackIcon name="Node.js">
-                            <FaNodeJs size={40} />
-                        </TechStackIcon>
-                        <TechStackIcon name="Next.js">
-                            <RiNextjsLine size={40} />
-                        </TechStackIcon>
-                        <TechStackIcon name="Docker">
-                            <FaDocker size={40} />
-                        </TechStackIcon>
-                        <TechStackIcon name="AWS">
-                            <FaAws size={40} />
-                        </TechStackIcon>
-                        <TechStackIcon name="SQL/NoSQL">
-                            <GoDatabase size={40} />
-                        </TechStackIcon>
-                    </div>
-                    <div className="flex flex-col items-center gap-4">
-                        <TechStackIcon name="Git">
-                            <IoGitBranchOutline size={40} />
-                        </TechStackIcon>
-                        <TechStackIcon name="Flask">
-                            <SiFlask size={40} />
-                        </TechStackIcon>
-                        <TechStackIcon name="TensorFlow">
-                            <SiTensorflow size={40} />
-                        </TechStackIcon>
-                        <TechStackIcon name="PyTorch">
-                            <SiPytorch size={40} />
-                        </TechStackIcon>
-                        <TechStackIcon name="Hugging Face">
-                            <SiHuggingface size={40} />
-                        </TechStackIcon>
-                    </div>
+                <div className="flex flex-col h-full p-4 gap-4 w-full items-center overflow-hidden">
+                    <motion.div 
+                        className="flex flex-col items-center gap-4 h-full justify-center move-up"
+                        ref={rightRef}
+                        style={{ y: rightY }}
+                    >
+                        {[...rightIcons, ...rightIcons].map((icon, index) => (
+                            <TechStackIcon key={index} name={icon.name}>
+                                {icon.icon}
+                            </TechStackIcon>
+                        ))}
+                    </motion.div>
                 </div>
             </div>
         </div>

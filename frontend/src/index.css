@@ -142,3 +142,8 @@ h1 {
     background: linear-gradient(to top, #F8F9FA 70%, transparent);
 }
 
+/*  position v stack up in y level*/
+/*  not a keyframe, just a class that moves it up. */
+.move-up {
+    transform: translateY(-100%);
+}
