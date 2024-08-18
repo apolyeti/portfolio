@@ -108,7 +108,7 @@ export default function Projects() {
                             href="https://github.com/apolyeti/recipe-client"
                             target="_blank"
                         >
-                            RECISCALER
+                            RECI-SCALER
                         </a>
                     </Card.Cover>
                     <Card.Desc>
