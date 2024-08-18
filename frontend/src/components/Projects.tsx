@@ -41,7 +41,10 @@ export default function Projects() {
                         <div 
                             className="flex flex-col items-center text-center"
                         >
-                            <a href="https://devpost.com/software/let-it-out-b2xp8u">
+                            <a 
+                                href="https://devpost.com/software/let-it-out-b2xp8u"
+                                target="_blank"
+                            >
                                 <p>
                                     LET
                                 </p>
@@ -73,6 +76,7 @@ export default function Projects() {
                         <div className="flex flex-col items-center text-center">
                             <a
                                 href="https://github.com/apolyeti/sparkfit"
+                                target="_blank"
                             >
                                 SPARKFIT
                             </a>
@@ -102,6 +106,7 @@ export default function Projects() {
                     <Card.Cover>
                         <a
                             href="https://github.com/apolyeti/recipe-client"
+                            target="_blank"
                         >
                             RECISCALER
                         </a>
