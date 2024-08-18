@@ -145,10 +145,10 @@ export default function Skills() {
 
     useEffect(() => {
         if (rightHeight > 0) {
-            const finalPosition = rightHeight / 2 + 135;
+            const finalPosition = rightHeight + 135;
             const controls = animate(rightY, [0, finalPosition], {
                 ease: 'linear',
-                duration: 5,
+                duration: 25,
                 repeat: Infinity,
                 repeatType: 'loop',
                 repeatDelay: 0
@@ -174,7 +174,7 @@ export default function Skills() {
                         ref={leftRef}
                         style={{ y: leftY }}
                     >
-                        {[...leftIcons, ...leftIcons, ...leftIcons].map((icon, index) => (
+                        {[...leftIcons, ...leftIcons].map((icon, index) => (
                             <TechStackIcon key={index} name={icon.name}>
                                 {icon.icon}
                             </TechStackIcon>
@@ -199,7 +199,7 @@ export default function Skills() {
                         ref={rightRef}
                         style={{ y: rightY }}
                     >
-                        {[...rightIcons, ...rightIcons].map((icon, index) => (
+                        {[...rightIcons, ...rightIcons, ...rightIcons].map((icon, index) => (
                             <TechStackIcon key={index} name={icon.name}>
                                 {icon.icon}
                             </TechStackIcon>
