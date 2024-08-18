@@ -141,3 +141,12 @@ h1 {
 .cover.bottom {
     background: linear-gradient(to top, #F8F9FA 70%, transparent);
 }
+
+.card {
+    border: 2px solid #212529;
+}
+
+.half-border {
+    border-right: 2px solid #212529;
+}
+
