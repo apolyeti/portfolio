@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.static(path.join(__dirname, '../frontend/dist')));
 
 app.get('*', (req, res) => {
-    const index = path.join(__dirname, '../frontend/dist/index.html', 'utf-8');
+    const index = fs.readFileSync(path.join(__dirname, '../frontend/dist/index.html'), 'utf-8');
     res.send(index);
 });
 
