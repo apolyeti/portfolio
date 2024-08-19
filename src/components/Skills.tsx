@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import TechStackIcon from './TechStackIcon';
 import { RiNextjsLine, RiJavascriptLine } from "react-icons/ri";
 import { TbBrandTypescript } from "react-icons/tb";
@@ -35,6 +35,52 @@ import { animate, useMotionValue, motion } from 'framer-motion';
 
 
 export default function Skills() {
+
+    const [gapSize, setGapSize] = useState(4); // Default gap size
+
+    const calculateGapSize = () => {
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+        
+        // adjust gap size based on screen size
+        if (screenWidth < 640) {
+            setGapSize(2);
+        } else if (screenWidth < 768) {
+            setGapSize(2.5);
+        } else if (screenWidth < 1024) {
+            setGapSize(3);
+        } else if (screenWidth < 1280) {
+            setGapSize(3.5);
+        } else if (screenWidth < 1536) {
+            setGapSize(4);
+        } else {
+            setGapSize(4.5);
+        }
+
+        // adjust gap size based on screen height
+        if (screenHeight < 640) {
+            setGapSize(2);
+        } else if (screenHeight < 768) {
+            setGapSize(2.5);
+        } else if (screenHeight < 1024) {
+            setGapSize(3);
+        } else if (screenHeight < 1280) {
+            setGapSize(3.5);
+        } else if (screenHeight < 1536) {
+            setGapSize(4);
+        } else {
+            setGapSize(4.5);
+        }
+    };
+
+    useEffect(() => {
+        calculateGapSize(); // Calculate gap size on initial render
+        window.addEventListener('resize', calculateGapSize); // Recalculate gap size on window resize
+
+        return () => {
+            window.removeEventListener('resize', calculateGapSize); // Clean up event listener
+        };
+    }, []);
 
     const leftIcons = [
         {
@@ -129,30 +175,36 @@ export default function Skills() {
     const rightY = useMotionValue(0);
 
     useEffect(() => {
-        if (leftHeight > 0) {
-            const viewportHeight = window.innerHeight;
-            // const finalPosition = -leftHeight - 135;
-            const finalPosition = -leftHeight - viewportHeight * 0.18;
-            const controls = animate(leftY, [0, finalPosition], {
-                ease: 'linear',
-                duration: 20,
-                repeat: Infinity,
-                repeatType: 'loop',
-                repeatDelay: 0
-            });
+        const startAnimation = () => {
+            if (leftHeight > 0) {
+                const viewportHeight = window.innerHeight;
+                const finalPosition = -leftHeight - viewportHeight / 1.95;  // Adjust this to control how far it scrolls
+                const controls = animate(leftY, [0, finalPosition], {
+                    ease: 'linear',
+                    duration: 30,
+                    repeat: Infinity,
+                    repeatType: 'loop',
+                    repeatDelay: 0
+                });
+    
+                return controls.stop;
+            }
+        };
+        startAnimation();
+        window.addEventListener('resize', startAnimation); // Restart animation on resize
 
-            return controls.stop;
-        }
+        return () => {
+            window.removeEventListener('resize', startAnimation); // Clean up event listener
+        };
     }, [leftHeight, leftY]);
 
     useEffect(() => {
         if (rightHeight > 0) {
             const viewportHeight = window.innerHeight;
-            // const finalPosition = rightHeight + 135;
-            const finalPosition = rightHeight + viewportHeight * 0.18;
+            const finalPosition = rightHeight + viewportHeight / 1.95;  // Adjust this to control how far it scrolls
             const controls = animate(rightY, [0, finalPosition], {
                 ease: 'linear',
-                duration: 20,
+                duration: 30,
                 repeat: Infinity,
                 repeatType: 'loop',
                 repeatDelay: 0
@@ -172,13 +224,13 @@ export default function Skills() {
             </div>
             <div className="flex flex-row h-full justify-between">
                 {/* Left icons */}
-                <div className="flex flex-col h-full p-4 gap-4 w-full items-center overflow-hidden">
+                <div className="flex flex-col h-full p-4 w-full items-center overflow-hidden">
                     <motion.div 
                         className="flex flex-col items-center gap-4 h-full" 
                         ref={leftRef}
-                        style={{ y: leftY }}
+                        style={{ y: leftY, gap: `${gapSize}rem` }}
                     >
-                        {[...leftIcons, ...leftIcons].map((icon, index) => (
+                        {[...leftIcons, ...leftIcons, ...leftIcons, ...leftIcons, ...leftIcons].map((icon, index) => (
                             <TechStackIcon key={index} name={icon.name}>
                                 {icon.icon}
                             </TechStackIcon>
@@ -186,7 +238,7 @@ export default function Skills() {
                     </motion.div>
                 </div>
 
-                <div className="flex flex-col h-full justify-center text-center gap-4">
+                <div className="flex flex-col h-full justify-center text-center gap-4" style={{gap: `${gapSize}rem`}}>
                     <h1 className="text-5xl">
                         MY
                     </h1>
@@ -200,9 +252,9 @@ export default function Skills() {
                     <motion.div 
                         className="flex flex-col items-center gap-4 h-full justify-center move-up"
                         ref={rightRef}
-                        style={{ y: rightY }}
+                        style={{ y: rightY, gap: `${gapSize}rem` }}
                     >
-                        {[...rightIcons, ...rightIcons, ...rightIcons].map((icon, index) => (
+                        {[...rightIcons, ...rightIcons, ...rightIcons, ...rightIcons, ...rightIcons, ...rightIcons].map((icon, index) => (
                             <TechStackIcon key={index} name={icon.name}>
                                 {icon.icon}
                             </TechStackIcon>
