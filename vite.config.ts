@@ -6,9 +6,7 @@ export default defineConfig({
     plugins: [react()],
     assetsInclude: ['**/*.ttf'],
     build: {
-        manifest: true,
         rollupOptions: {
-            input: 'src/main.tsx',
             output: {
                 manualChunks(id) {
                     if (id.includes('node_modules')) {
