@@ -181,7 +181,7 @@ export default function Skills() {
                 const finalPosition = -leftHeight - viewportHeight / 1.95;  // Adjust this to control how far it scrolls
                 const controls = animate(leftY, [0, finalPosition], {
                     ease: 'linear',
-                    duration: 30,
+                    duration: 60,
                     repeat: Infinity,
                     repeatType: 'loop',
                     repeatDelay: 0
@@ -204,7 +204,7 @@ export default function Skills() {
             const finalPosition = rightHeight + viewportHeight / 1.95;  // Adjust this to control how far it scrolls
             const controls = animate(rightY, [0, finalPosition], {
                 ease: 'linear',
-                duration: 30,
+                duration: 60,
                 repeat: Infinity,
                 repeatType: 'loop',
                 repeatDelay: 0
@@ -230,7 +230,7 @@ export default function Skills() {
                         ref={leftRef}
                         style={{ y: leftY, gap: `${gapSize}rem` }}
                     >
-                        {[...leftIcons, ...leftIcons, ...leftIcons, ...leftIcons, ...leftIcons].map((icon, index) => (
+                        {[...leftIcons, ...leftIcons, ...leftIcons, ...leftIcons, ...leftIcons, ...leftIcons].map((icon, index) => (
                             <TechStackIcon key={index} name={icon.name}>
                                 {icon.icon}
                             </TechStackIcon>
