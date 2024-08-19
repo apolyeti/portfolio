@@ -130,10 +130,12 @@ export default function Skills() {
 
     useEffect(() => {
         if (leftHeight > 0) {
-            const finalPosition = -leftHeight - 135;
+            const viewportHeight = window.innerHeight;
+            // const finalPosition = -leftHeight - 135;
+            const finalPosition = -leftHeight - viewportHeight * 0.18;
             const controls = animate(leftY, [0, finalPosition], {
                 ease: 'linear',
-                duration: 25,
+                duration: 20,
                 repeat: Infinity,
                 repeatType: 'loop',
                 repeatDelay: 0
@@ -145,10 +147,12 @@ export default function Skills() {
 
     useEffect(() => {
         if (rightHeight > 0) {
-            const finalPosition = rightHeight + 135;
+            const viewportHeight = window.innerHeight;
+            // const finalPosition = rightHeight + 135;
+            const finalPosition = rightHeight + viewportHeight * 0.18;
             const controls = animate(rightY, [0, finalPosition], {
                 ease: 'linear',
-                duration: 25,
+                duration: 20,
                 repeat: Infinity,
                 repeatType: 'loop',
                 repeatDelay: 0
@@ -162,9 +166,9 @@ export default function Skills() {
 
     return (
         <div className="flex flex-col justify-center h-screen relative">
-            <div className="cover top h-1/5 absolute top-0 left-0 right-0 z-10">
+            <div className="cover top h-[20vh] absolute top-0 left-0 right-0 z-10">
             </div>
-            <div className="cover bottom h-1/5 absolute bottom-0 left-0 right-0 z-10">
+            <div className="cover bottom h-[20vh] absolute bottom-0 left-0 right-0 z-10">
             </div>
             <div className="flex flex-row h-full justify-between">
                 {/* Left icons */}
