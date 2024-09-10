@@ -3,7 +3,7 @@ import Card from "./Card";
 export default function Projects() {
     return (
         <div id="projects" className="h-screen flex flex-col items-center justify-center">
-            <div className="flex flex-row items-center justify-center gap-4 w-full h-2/5">
+            <div className="flex flex-row items-center justify-center gap-4 w-full h-1/2">
                 <Card>
                     <Card.Cover>
                         <div className="flex flex-col items-center text-center">
@@ -29,10 +29,44 @@ export default function Projects() {
                         </div>
                     </Card.Desc>
                 </Card>
+                <Card>
+                    <Card.Cover>
+                        <div className="flex flex-col items-center text-center">
+                            <p>
+                                HERE FOR YOU
+                            </p>
+                        </div>
+                    </Card.Cover>
+                    <Card.Desc>
+                        <div className="p-3 flex flex-col items-center justify-evenly">
+                            <p className="">
+                                Collaborated with a team to 
+                            </p>
+                            <p>
+                                develop a web application
+                            </p>
+                            <p>
+                                for connecting communities
+                            </p>
+                            <p className="">
+                                amd requesting resources
+                            </p>
+                            <p>
+                                for those in need
+                            </p>
+                        </div>
+                    </Card.Desc>
+                </Card>
             </div>
-            <div className="flex flex-col items-center justify-center w-full h-1/5">
+            <div className="flex flex-col items-center justify-center w-full h-1/5 gap-2">
                 <h1 className="">
-                    MY PROJECTS & EXPERIENCES
+                    MY EXPERIENCES
+                </h1>
+                <h1>
+                    &
+                </h1>
+                <h1>
+                    PROJECTS
                 </h1>
             </div>
             <div className="flex flex-row items-center justify-evenly gap-10 w-full h-2/5 p-8">
