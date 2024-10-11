@@ -1,5 +1,5 @@
 import "keen-slider/keen-slider.min.css";
-import { useKeenSlider } from "keen-slider/react";
+import { useKeenSlider } from "keen-slider/react.es";
 import { RiJavascriptLine, RiNextjsLine } from "react-icons/ri";
 import { TbBrandTypescript } from "react-icons/tb";
 import { AiOutlineJava, AiOutlinePython } from "react-icons/ai";
