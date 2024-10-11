@@ -1,0 +1,161 @@
+import "keen-slider/keen-slider.min.css";
+import { useKeenSlider } from "keen-slider/react";
+import { RiJavascriptLine } from "react-icons/ri";
+import { TbBrandTypescript } from "react-icons/tb";
+import { AiOutlineJava, AiOutlinePython } from "react-icons/ai";
+import { BiLogoGoLang } from "react-icons/bi";
+import {
+  PiFileCLight,
+  PiFileCppLight,
+  PiFileCSharpLight,
+} from "react-icons/pi";
+import { DiSwift } from "react-icons/di";
+import { FaRust } from "react-icons/fa6";
+
+export default function SkillsCarousel() {
+  const animation = { duration: 10000, easing: (t: unknown) => t };
+
+  const sliderOptionsLeft = {
+    loop: true,
+    spacing: 0,
+    vertical: true,
+    slides: {
+      perView: 8,
+      spacing: 20,
+    },
+    drag: false,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    created(s: any) {
+      s.moveToIdx(5, true, animation);
+    },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    updated(s: any) {
+      s.moveToIdx(s.track.details.abs + 5, true, animation);
+    },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    animationEnded(s: any) {
+      s.moveToIdx(s.track.details.abs + 5, true, animation);
+    },
+  };
+
+  const sliderOptionsRight = {
+    loop: true,
+    spacing: 0,
+    vertical: true,
+    slides: {
+      perView: 8,
+      spacing: 20,
+    },
+    drag: false,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    created(s: any) {
+      s.moveToIdx(-5, true, animation);
+    },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    updated(s: any) {
+      s.moveToIdx(s.track.details.abs - 5, true, animation);
+    },
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    animationEnded(s: any) {
+      s.moveToIdx(s.track.details.abs - 5, true, animation);
+    },
+  };
+
+  const [sliderRefLeft] = useKeenSlider(sliderOptionsLeft);
+  const [sliderRefRight] = useKeenSlider(sliderOptionsRight);
+
+  const leftSkills = [
+    {
+      name: "JavaScript",
+      icon: <RiJavascriptLine size={40} className="mx-auto" />,
+    },
+    {
+      name: "TypeScript",
+      icon: <TbBrandTypescript size={40} className="mx-auto" />,
+    },
+    {
+      name: "Python",
+      icon: <AiOutlinePython size={40} className="mx-auto" />,
+    },
+    {
+      name: "Golang",
+      icon: <BiLogoGoLang size={40} className="mx-auto" />,
+    },
+    {
+      name: "C",
+      icon: <PiFileCLight size={40} className="mx-auto" />,
+    },
+    {
+      name: "C++",
+      icon: <PiFileCppLight size={40} className="mx-auto" />,
+    },
+    {
+      name: "C#",
+      icon: <PiFileCSharpLight size={40} className="mx-auto" />,
+    },
+    {
+      name: "Java",
+      icon: <AiOutlineJava size={40} className="mx-auto" />,
+    },
+    {
+      name: "Swift",
+      icon: <DiSwift size={40} className="mx-auto" />,
+    },
+    {
+      name: "Rust",
+      icon: <FaRust size={40} className="mx-auto" />,
+    },
+  ];
+
+  return (
+    <div className="flex flex-col justify-center h-screen relative">
+      <div className="cover top h-[20vh] absolute top-0 left-0 right-0 z-10"></div>
+      <div className="cover bottom h-[20vh] absolute bottom-0 left-0 right-0 z-10"></div>
+      <div className="flex flex-row h-full justify-between">
+        {/* Left icons */}
+        <div className="flex items-center h-screen w-full justify-center overflow-hidden">
+          <div
+            ref={sliderRefLeft}
+            className="flex flex-col justify-center items-center"
+          >
+            {leftSkills.map((skill) => (
+              <div
+                key={skill.name}
+                className="keen-slider__slide flex flex-col justify-center items-center"
+              >
+                {skill.icon}
+                <p>{skill.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div
+          className="flex flex-col w-full h-full justify-center text-center gap-4"
+          style={{ gap: `${4}rem` }}
+        >
+          <h1 className="text-5xl">MY</h1>
+          <h1 className="text-5xl">SKILLS</h1>
+        </div>
+
+        {/* Right icons */}
+        <div className="flex items-center h-screen w-full justify-center overflow-hidden">
+          <div
+            ref={sliderRefRight}
+            className="flex flex-col justify-center items-center"
+          >
+            {leftSkills.map((skill) => (
+              <div
+                key={skill.name}
+                className="keen-slider__slide flex flex-col justify-center items-center"
+              >
+                {skill.icon}
+                <p>{skill.name}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
