@@ -1,6 +1,6 @@
 import "keen-slider/keen-slider.min.css";
 import { useKeenSlider } from "keen-slider/react";
-import { RiJavascriptLine } from "react-icons/ri";
+import { RiJavascriptLine, RiNextjsLine } from "react-icons/ri";
 import { TbBrandTypescript } from "react-icons/tb";
 import { AiOutlineJava, AiOutlinePython } from "react-icons/ai";
 import { BiLogoGoLang } from "react-icons/bi";
@@ -10,7 +10,15 @@ import {
   PiFileCSharpLight,
 } from "react-icons/pi";
 import { DiSwift } from "react-icons/di";
-import { FaRust } from "react-icons/fa6";
+import { FaAws, FaDocker, FaNodeJs, FaRust } from "react-icons/fa6";
+import { GoDatabase } from "react-icons/go";
+import { IoGitBranchOutline } from "react-icons/io5";
+import {
+  SiFlask,
+  SiHuggingface,
+  SiPytorch,
+  SiTensorflow,
+} from "react-icons/si";
 
 export default function SkillsCarousel() {
   const animation = { duration: 10000, easing: (t: unknown) => t };
@@ -107,6 +115,49 @@ export default function SkillsCarousel() {
     },
   ];
 
+  const rightIcons = [
+    {
+      name: "Node.js",
+      icon: <FaNodeJs size={40} className="mx-auto" />,
+    },
+    {
+      name: "Next.js",
+      icon: <RiNextjsLine size={40} className="mx-auto" />,
+    },
+    {
+      name: "Docker",
+      icon: <FaDocker size={40} className="mx-auto" />,
+    },
+    {
+      name: "AWS",
+      icon: <FaAws size={40} className="mx-auto" />,
+    },
+    {
+      name: "SQL/NoSQL",
+      icon: <GoDatabase size={40} className="mx-auto" />,
+    },
+    {
+      name: "Git",
+      icon: <IoGitBranchOutline size={40} className="mx-auto" />,
+    },
+    {
+      name: "Flask",
+      icon: <SiFlask size={40} className="mx-auto" />,
+    },
+    {
+      name: "TensorFlow",
+      icon: <SiTensorflow size={40} className="mx-auto" />,
+    },
+    {
+      name: "PyTorch",
+      icon: <SiPytorch size={40} className="mx-auto" />,
+    },
+    {
+      name: "Hugging Face",
+      icon: <SiHuggingface size={40} className="mx-auto" />,
+    },
+  ];
+
   return (
     <div className="flex flex-col justify-center h-screen relative">
       <div className="cover top h-[20vh] absolute top-0 left-0 right-0 z-10"></div>
@@ -144,7 +195,7 @@ export default function SkillsCarousel() {
             ref={sliderRefRight}
             className="flex flex-col justify-center items-center"
           >
-            {leftSkills.map((skill) => (
+            {rightIcons.map((skill) => (
               <div
                 key={skill.name}
                 className="keen-slider__slide flex flex-col justify-center items-center"
