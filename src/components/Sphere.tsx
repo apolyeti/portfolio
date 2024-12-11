@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
-import * as THREE from 'three';
-import { AsciiEffect } from 'three/examples/jsm/effects/AsciiEffect.js';
+import React, { useEffect, useRef } from "react";
+import * as THREE from "three";
+import { AsciiEffect } from "three/examples/jsm/effects/AsciiEffect.js";
 
 interface AsciiEffectComponentProps {
   width?: string;
@@ -8,8 +8,8 @@ interface AsciiEffectComponentProps {
 }
 
 const AsciiEffectComponent: React.FC<AsciiEffectComponentProps> = ({
-  width = '450px',
-  height = '300px',
+  width = "450px",
+  height = "300px",
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -25,11 +25,18 @@ const AsciiEffectComponent: React.FC<AsciiEffectComponentProps> = ({
     function init() {
       const aspect = parseInt(width) / parseInt(height);
       const d = 200;
-      camera = new THREE.OrthographicCamera(-d * aspect, d * aspect, d, -d, 1, 1000);
+      camera = new THREE.OrthographicCamera(
+        -d * aspect,
+        d * aspect,
+        d,
+        -d,
+        1,
+        1000
+      );
       camera.position.z = 500;
 
       scene = new THREE.Scene();
-      scene.background = new THREE.Color(0xF8F9FA); // Background color set to #F8F9FA
+      scene.background = new THREE.Color(0xf8f9fa); // Background color set to #F8F9FA
 
       const pointLight1 = new THREE.PointLight(0xffffff, 1.5, 0, 0);
       pointLight1.position.set(500, 500, 500);
@@ -60,14 +67,14 @@ const AsciiEffectComponent: React.FC<AsciiEffectComponentProps> = ({
       renderer.setSize(parseInt(width), parseInt(height));
       renderer.setAnimationLoop(animate);
 
-      effect = new AsciiEffect(renderer, ' .:-+*=%@#', { invert: false }); // Invert set to false for black text
+      effect = new AsciiEffect(renderer, " .:-+*=%@#", { invert: false }); // Invert set to false for black text
       effect.setSize(parseInt(width), parseInt(height));
-      effect.domElement.style.color = '#212529'; // Text color set to #212529
-      effect.domElement.style.backgroundColor = '#F8F9FA'; // Background color set to #F8F9FA
+      effect.domElement.style.color = "#212529"; // Text color set to #212529
+      effect.domElement.style.backgroundColor = "#F8F9FA"; // Background color set to #F8F9FA
 
       containerRef.current?.appendChild(effect.domElement);
 
-      window.addEventListener('resize', onWindowResize);
+      window.addEventListener("resize", onWindowResize);
     }
 
     function onWindowResize() {
@@ -97,7 +104,7 @@ const AsciiEffectComponent: React.FC<AsciiEffectComponentProps> = ({
     init();
 
     return () => {
-      window.removeEventListener('resize', onWindowResize);
+      window.removeEventListener("resize", onWindowResize);
       renderer.dispose();
       containerRef.current?.removeChild(effect.domElement);
     };

@@ -2,11 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-
 :root {
   font-family: Monoid, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
-  background-color: #F8F9FA;
+  background-color: #f8f9fa;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -15,149 +14,150 @@
 }
 
 @font-face {
-    font-family: Monoid;
-    src: url('./assets/fonts/Monoid/MonoidNerdFont-Regular.ttf');
+  font-family: Monoid;
+  src: url("./assets/fonts/Monoid/MonoidNerdFont-Regular.ttf");
 }
 
 /* italic version */
 @font-face {
-    font-family: Monoid;
-    src: url('./assets/fonts/Monoid/MonoidNerdFont-Italic.ttf');
-    font-style: italic;
+  font-family: Monoid;
+  src: url("./assets/fonts/Monoid/MonoidNerdFont-Italic.ttf");
+  font-style: italic;
 }
 
-h1, h2, p {
-    color: #212529;
+h1,
+h2,
+p {
+  color: #212529;
 }
 
 h1 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
-
 @keyframes slideIn {
-    from {
-        transform: translateY(-100%);
-    }
-    to {
-        transform: translateY(0);
-    }
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 @keyframes slideOut {
-    from {
-        transform: translateY(0);
-    }
-    to {
-        transform: translateY(-100%);
-    }
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-100%);
+  }
 }
 
 .navbar {
-    background-color: #F8F9FA;
-    animation: slideIn 0.5s;
+  background-color: #f8f9fa;
+  animation: slideIn 0.5s;
 }
 
 .logo {
-    transform: scale(1);
-    transition: transform 0.1s;
+  transform: scale(1);
+  transition: transform 0.1s;
 }
 
-.logo:hover{
-    cursor: pointer;
-    transform: scale(1.1);
-    transition: transform 0.1s;
+.logo:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: transform 0.1s;
 }
 
 .slideout {
-    animation: slideOut 0.5s;
+  animation: slideOut 0.5s;
 }
 
 /* Rotating circle animation */
 @keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .rotate-circle {
-    animation: rotate 10s linear infinite;
+  animation: rotate 10s linear infinite;
 }
 
 /* Slide in from left */
 @keyframes slideInLeft {
-    from {
-        transform: translateX(-100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .slide-in-left {
-    animation: slideInLeft 1s ease-out;
+  animation: slideInLeft 1s ease-out;
 }
 
 /* Slide in from right */
 @keyframes slideInRight {
-    from {
-        transform: translateX(100%);
-        opacity: 0;
-    }
-    to {
-        transform: translateX(0);
-        opacity: 1;
-    }
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .slide-in-right {
-    animation: slideInRight 1s ease-out;
+  animation: slideInRight 1s ease-out;
 }
 
 @keyframes drawCircle {
-    from {
-        stroke-dashoffset: 100%;
-    }
-    to {
-        stroke-dashoffset: 0;
-    }
+  from {
+    stroke-dashoffset: 100%;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 @keyframes rotateCircle {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .draw-and-rotate {
-    animation: drawCircle 2s ease-in-out forwards, rotateCircle 10s linear infinite;
+  animation: drawCircle 2s ease-in-out forwards,
+    rotateCircle 10s linear infinite;
 }
 
 .cover.top {
-    background: linear-gradient(to bottom, #F8F9FA 70%, transparent);
+  background: linear-gradient(to bottom, #f8f9fa 70%, transparent);
 }
 
 .cover.bottom {
-    background: linear-gradient(to top, #F8F9FA 70%, transparent);
+  background: linear-gradient(to top, #f8f9fa 70%, transparent);
 }
 
 .card {
-    border: 2px solid #212529;
+  border: 2px solid #212529;
 }
 
 .half-border {
-    border-right: 2px solid #212529;
+  border-right: 2px solid #212529;
 }
 
 .navbar-button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
-
