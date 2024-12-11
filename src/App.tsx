@@ -7,21 +7,12 @@ import Projects from "./components/Projects";
 function Home() {
   const [headerLine1, setHeaderLine1] = useState("");
   const [headerLine2, setHeaderLine2] = useState("");
-  const [isMobile, setIsMobile] = useState(false);
   const [age, setAge] = useState(0);
   const [showPage, setShowPage] = useState(false);
   const [index, setIndex] = useState(0);
 
   const initialDelay = 900; // Initial delay before starting the animation
   const wordDelay = 350; // Delay between each word
-
-  useEffect(() => {
-    const userAgent = navigator.userAgent;
-    const isMobileDevice =
-      /windows phone|android|iPad|iPhone|iPod/.test(userAgent.toLowerCase()) ||
-      window.innerWidth <= 768;
-    setIsMobile(isMobileDevice);
-  }, []);
 
   useEffect(() => {
     const birthDate = new Date("2003-12-12");
@@ -106,15 +97,6 @@ function Home() {
       portfolio.scrollIntoView({ behavior: "smooth" });
     }
   };
-
-  if (isMobile) {
-    return (
-      <div className="flex flex-col h-screen justify-center text-center items-center">
-        <h1>PERHAPS SOME PAGES WERE MEANT</h1>
-        <h1>TO BE VIEWED ON A LARGER SCREEN</h1>
-      </div>
-    );
-  }
 
   return (
     <>
