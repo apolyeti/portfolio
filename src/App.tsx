@@ -3,6 +3,7 @@ import Sphere from "./components/Sphere";
 import NavBar from "./components/NavBar";
 import Skills from "./components/Skills";
 import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 
 function Home() {
   const [headerLine1, setHeaderLine1] = useState("");
@@ -101,23 +102,16 @@ function Home() {
   return (
     <>
       <NavBar /> {/* Always render the NavBar */}
-      <div className="flex flex-col justify-between h-screen p-4" id="home">
-        <div className="flex" id="spacer"></div>
-        <div className="flex flex-row justify-between">
-          <div className="flex flex-col justify-center gap-4 px-4 h-full">
-            <h1
-              className="text-7xl text-left"
-              style={{ opacity: headerLine1 ? 1 : 0 }}>
-              {headerLine1 || "WELCOME TO"}
-            </h1>
-            <h1
-              className="text-7xl text-left"
-              style={{ opacity: headerLine2 ? 1 : 0 }}>
-              {headerLine2 || "MY WEBSITE"}
-            </h1>
+      <div className="flex flex-col md:justify-between h-screen p-4" id="home">
+        <div className="flex h-1/5 md:h-0"></div>
+        <div className="flex flex-col md:flex-row justify-center md:justify-between">
+          <div className="flex flex-col justify-center md:items-start items-center gap-4">
+            <h1 className="text-4xl md:text-7xl">{headerLine1}</h1>
+            <h1 className="text-4xl md:text-7xl">{headerLine2}</h1>
           </div>
+
           <div
-            className="flex flex-row justify-evenly w-2/5 h-full items-center border-black border-2"
+            className="w-full md:w-2/5 h-5/6 md:h-full flex justify-center items-center md:border-2 md:border-black"
             style={{ opacity: showPage ? 1 : 0 }}>
             <Sphere />
           </div>
@@ -132,14 +126,12 @@ function Home() {
       {showPage && (
         <>
           <div className="flex flex-col justify-center h-screen" id="portfolio">
-            <div className="flex flex-row items-center justify-center">
-              <div className="flex flex-col w-1/4 justify-evenly text-center h-full gap-2">
-                <div>
-                  <h1 className="text-5xl py-7">ABOUT</h1>
-                  <h1 className="text-5xl">ME</h1>
-                </div>
+            <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+              <div className="flex md:flex-col flex-row gap-4 py-4 md:py-0 items-center">
+                <h1 className="text-5xl">ABOUT</h1>
+                <h1 className="text-5xl">ME</h1>
               </div>
-              <div className="flex flex-col w-1/3 text-left h-full gap-4">
+              <div className="flex flex-col w-full md:w-1/3 md:text-left text-center h-full gap-4 px-4">
                 <p className="">
                   I'm Arveen Azhand, a {age}-year-old software developer based
                   in Seattle, WA.
@@ -165,6 +157,7 @@ function Home() {
           </div>
           <Skills />
           <Projects />
+          <Contact />
         </>
       )}
     </>

@@ -233,8 +233,8 @@ export default function Skills() {
         <div
           className="flex flex-col h-full justify-center text-center gap-4"
           style={{ gap: `${gapSize}rem` }}>
-          <h1 className="text-5xl">MY</h1>
-          <h1 className="text-5xl">SKILLS</h1>
+          <h1 className="md:text-5xl text-3xl">MY</h1>
+          <h1 className="md:text-5xl text-3xl"> SKILLS</h1>
         </div>
 
         {/* Right icons */}

@@ -9,28 +9,9 @@ export default function Contact() {
   return (
     <>
       <div
-        id="contact navbar"
-        className="fixed top-0 left-0 w-full z-50 h-20 transition-transform duration-500">
-        <div className="flex flex-row items-center justify-between h-full p-2">
-          <a href="/" className="block h-full">
-            <img
-              src="/logotransparent.svg"
-              alt="Logo"
-              className="logo h-full"
-            />
-          </a>
-          <div className="flex flex-row gap-4 px-4">
-            <a className="navbar-button" href="/#portfolio">
-              ABOUT ME
-            </a>
-            <a className="navbar-button" href="/#projects">
-              WORK
-            </a>
-          </div>
-        </div>
-      </div>
-      <div className="flex flex-row items-center justify-center h-screen gap-8">
-        <div className="flex flex-col w-1/3 text-center">
+        id="contact"
+        className="flex flex-col md:flex-row items-center justify-center h-screen gap-8">
+        <div className="flex flex-col w-full md:w-1/3 text-center">
           <h1 className="text-4xl">CONTACT</h1>
           <div className="flex flex-col p-2">
             <h2>I'm always open to new opportunities.</h2>
@@ -39,7 +20,7 @@ export default function Contact() {
             <h2>out to me on any of them.</h2>
           </div>
         </div>
-        <div className="flex flex-col w-1/4 gap-8">
+        <div className="flex flex-col w-full items-center md:items-start md:w-1/4 gap-8">
           <div className="flex flex-row gap-2">
             <CiMail size={25} />
             <a

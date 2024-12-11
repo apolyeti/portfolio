@@ -16,7 +16,7 @@ export default function Card({ children }: CardProps) {
 
   return (
     <div
-      className="w-1/3 h-2/3 card flex-row flex justify-center"
+      className="w-full h-2/3 card flex-row flex justify-center"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}>
       <div

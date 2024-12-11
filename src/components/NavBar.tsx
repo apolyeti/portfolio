@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 
 export default function NavBar() {
   const [isVisible, setIsVisible] = useState(false); // Start with the navbar hidden
+  const [isMobile, setIsMobile] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
 
   useEffect(() => {
@@ -27,6 +28,12 @@ export default function NavBar() {
     };
   }, [lastScrollY]);
 
+  useEffect(() => {
+    if (window.innerWidth < 768) {
+      setIsMobile(true);
+    }
+  }, []);
+
   const handleScrollToSection = (d: string) => {
     const destination = document.getElementById(d);
     if (destination) {
@@ -37,7 +44,7 @@ export default function NavBar() {
   return (
     <div
       className={`fixed top-0 left-0 w-full z-50 h-20 transition-transform duration-500 ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
+        isVisible && !isMobile ? "translate-y-0" : "-translate-y-full"
       }`}>
       <div className="flex flex-row items-center justify-between h-full p-2">
         <img
@@ -55,7 +62,11 @@ export default function NavBar() {
           <button onClick={() => handleScrollToSection("projects")}>
             WORK
           </button>
-          <a href="/contact">CONTACT</a>
+          <button
+            onClick={() => handleScrollToSection("contact")}
+            className="navbar-button">
+            CONTACT
+          </button>
         </div>
       </div>
     </div>
