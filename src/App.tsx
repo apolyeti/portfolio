@@ -133,8 +133,8 @@ function Home() {
               </div>
               <div className="flex flex-col w-full md:w-1/3 md:text-left text-center h-full gap-4 px-4">
                 <p className="">
-                  I'm Arveen Azhand, a {age}-year-old software developer based
-                  in Seattle, WA.
+                  I'm Arveen Azhand, a {age}-year-old software engineer based in
+                  Seattle, WA.
                 </p>
                 <p>
                   I'm currently attending the University of California, Santa
