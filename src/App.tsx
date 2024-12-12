@@ -8,6 +8,7 @@ import Contact from "./components/Contact";
 function Home() {
   const [headerLine1, setHeaderLine1] = useState("");
   const [headerLine2, setHeaderLine2] = useState("");
+
   const [age, setAge] = useState(0);
   const [showPage, setShowPage] = useState(false);
   const [index, setIndex] = useState(0);
@@ -106,8 +107,16 @@ function Home() {
         <div className="flex h-1/5 md:h-0"></div>
         <div className="flex flex-col md:flex-row justify-center md:justify-between">
           <div className="flex flex-col justify-center md:items-start items-center gap-4">
-            <h1 className="text-4xl md:text-7xl">{headerLine1}</h1>
-            <h1 className="text-4xl md:text-7xl">{headerLine2}</h1>
+            <h1
+              className="text-4xl md:text-7xl"
+              style={{ opacity: headerLine1 ? 1 : 0 }}>
+              {headerLine1 || "WELCOME TO"}
+            </h1>
+            <h1
+              className="text-4xl md:text-7xl"
+              style={{ opacity: headerLine2 ? 1 : 0 }}>
+              {headerLine2 || "MY PORTFOLIO"}
+            </h1>
           </div>
 
           <div
