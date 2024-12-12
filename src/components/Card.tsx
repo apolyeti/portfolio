@@ -31,8 +31,6 @@ export default function Card({ children }: CardProps) {
         className="flex flex-col justify-center text-left overflow-hidden text-nowrap"
         style={{
           width: !isHovered ? "0%" : "67%",
-          borderLeft: isHovered ? "1px solid #212429" : "none",
-          borderColor: isHovered ? "#212429" : "transparent",
           transition: "width 0.3s",
         }}>
         {cardDesc && cardDesc.props.children}

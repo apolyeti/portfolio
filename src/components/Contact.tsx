@@ -10,7 +10,7 @@ export default function Contact() {
     <>
       <div
         id="contact"
-        className="flex flex-col md:flex-row items-center justify-center h-screen gap-8">
+        className="flex flex-col md:flex-row items-center justify-evenly md:justify-center h-screen gap-8">
         <div className="flex flex-col w-full md:w-1/3 text-center">
           <h1 className="text-4xl">CONTACT</h1>
           <div className="flex flex-col p-2">
@@ -54,6 +54,8 @@ export default function Contact() {
             </a>
           </div>
         </div>
+        <div className="spacer"></div>
+        <div className="spacer"></div>
       </div>
     </>
   );

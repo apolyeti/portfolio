@@ -9,7 +9,7 @@ export default function Projects() {
         <h1 className="">MY</h1>
         <h1 className="">EXPERIENCES</h1>
       </div>
-      <div className="flex flex-col items-center md:justify-center gap-4 md:w-1/3 w-2/3 h-3/5 md:h-2/5">
+      <div className="flex flex-col items-center md:justify-center gap-4 md:w-1/3 w-full h-3/5 md:h-2/5">
         <Card>
           <Card.Cover>
             <div className="flex flex-col items-center text-center text-sm md:text-base">
@@ -19,7 +19,7 @@ export default function Projects() {
             </div>
           </Card.Cover>
           <Card.Desc>
-            <div className="p-3 flex flex-col items-center justify-evenly text-xs md:text-sm text-wrap md:text-nowrap text-center">
+            <div className="p-3 flex flex-col items-center justify-evenly text-xs md:text-sm md:text-nowrap text-center">
               <p className="">Individual Tutor and Reader</p>
               <p className="italic">January 2024 — Present</p>
             </div>
@@ -32,7 +32,7 @@ export default function Projects() {
             </div>
           </Card.Cover>
           <Card.Desc>
-            <div className="px-10 flex flex-col items-center text-xs md:text-sm md:w-full text-center text-wrap md:text-nowrap">
+            <div className="px-10 flex flex-col items-center text-[0.7rem] md:text-sm md:w-full text-center md:text-nowrap">
               <p>Collaborated with a team to</p>
               <p>develop a web application</p>
               <p>for connecting communities</p>

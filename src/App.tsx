@@ -111,7 +111,7 @@ function Home() {
           </div>
 
           <div
-            className="w-full md:w-2/5 h-5/6 md:h-full flex justify-center items-center md:border-2 md:border-black"
+            className="w-full md:w-2/5 h-5/6 md:h-full flex justify-center items-center"
             style={{ opacity: showPage ? 1 : 0 }}>
             <Sphere />
           </div>

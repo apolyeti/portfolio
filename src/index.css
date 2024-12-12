@@ -13,6 +13,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 @font-face {
   font-family: Monoid;
   src: url("./assets/fonts/Monoid/MonoidNerdFont-Regular.ttf");
@@ -151,7 +156,7 @@ h1 {
 }
 
 .card {
-  border: 2px solid #212529;
+  /* border: 2px solid #212529; */
 }
 
 .half-border {
