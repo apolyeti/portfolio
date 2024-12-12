@@ -100,7 +100,7 @@ function Home() {
   };
 
   return (
-    <>
+    <div className="overflow-x-hidden">
       <NavBar /> {/* Always render the NavBar */}
       <div className="flex flex-col md:justify-between h-screen p-4" id="home">
         <div className="flex h-1/5 md:h-0"></div>
@@ -160,7 +160,7 @@ function Home() {
           <Contact />
         </>
       )}
-    </>
+    </div>
   );
 }
 
