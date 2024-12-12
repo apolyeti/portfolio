@@ -16,11 +16,11 @@ export default function Card({ children }: CardProps) {
 
   return (
     <div
-      className="w-full h-2/3 card flex-row flex justify-center"
+      className="w-full h-2/3 card flex-row flex justify-center overflow-hidden"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}>
       <div
-        className="flex flex-col items-center justify-center text-center z-10"
+        className="flex flex-col items-center justify-center text-center z-10 overflow-hidden"
         style={{
           width: !isHovered ? "100%" : "33%",
           transition: "width 0.3s",
