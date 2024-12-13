@@ -15,7 +15,7 @@ import { SiPytorch } from "react-icons/si";
 import { AiOutlineJava, AiOutlineKubernetes } from "react-icons/ai";
 import { DiSwift, DiPostgresql } from "react-icons/di";
 import { FaRust } from "react-icons/fa";
-import { SiFlask, SiNginxproxymanager } from "react-icons/si";
+import { SiNginxproxymanager } from "react-icons/si";
 import { SiHuggingface } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
 import { GoDatabase } from "react-icons/go";
