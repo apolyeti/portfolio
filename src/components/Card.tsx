@@ -18,7 +18,7 @@ export default function Card({ children, reverse }: CardProps) {
   return (
     <div
       className={`w-full h-2/3 card flex ${
-        reverse ? "flex-row-reverse" : "flex-row"
+        reverse ? "flex-row md:flex-row-reverse" : "flex-row"
       } justify-center overflow-hidden`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}>
