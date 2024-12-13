@@ -2,9 +2,10 @@ import React, { useState } from "react";
 
 interface CardProps extends React.HTMLAttributes<HTMLDivElement> {
   children: React.ReactNode;
+  reverse?: boolean;
 }
 
-export default function Card({ children }: CardProps) {
+export default function Card({ children, reverse }: CardProps) {
   const [isHovered, setIsHovered] = useState(false);
 
   const childrenArray = React.Children.toArray(children).filter(
@@ -16,9 +17,12 @@ export default function Card({ children }: CardProps) {
 
   return (
     <div
-      className="w-full h-2/3 card flex-row flex justify-center overflow-hidden"
+      className={`w-full h-2/3 card flex ${
+        reverse ? "flex-row-reverse" : "flex-row"
+      } justify-center overflow-hidden`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}>
+      {/* Cover Section */}
       <div
         className="flex flex-col items-center justify-center text-center z-10 overflow-hidden"
         style={{
@@ -27,6 +31,8 @@ export default function Card({ children }: CardProps) {
         }}>
         {cardCover && cardCover.props.children}
       </div>
+
+      {/* Description Section */}
       <div
         className="flex flex-col justify-center text-left overflow-hidden text-nowrap"
         style={{

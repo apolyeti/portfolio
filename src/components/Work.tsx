@@ -1,19 +1,19 @@
 import Card from "./Card";
 
-export default function Projects() {
+export default function Work() {
   return (
     <div
       id="projects"
-      className="h-screen w-screen flex flex-col md:flex-row-reverse items-center justify-evenly">
+      className="h-screen w-screen flex flex-col md:flex-row items-center justify-evenly">
       <div className="flex flex-col items-center justify-center gap-2 w-1/2">
         <h1 className="">MY</h1>
-        <h1 className="">PROJECTS</h1>
+        <h1 className="">EXPERIENCES</h1>
       </div>
       <div className="flex flex-col items-center md:justify-center gap-4 md:w-1/2 w-full h-3/5 md:h-2/5">
-        <Card reverse>
+        <Card>
           <Card.Cover>
             <div className="flex flex-col items-center text-center text-sm md:text-base">
-              <p>CAFE HOPPER</p>
+              <p>HERE FOR YOU</p>
             </div>
           </Card.Cover>
           <Card.Desc>
@@ -23,21 +23,36 @@ export default function Projects() {
               <p>for connecting communities</p>
               <p>amd requesting resources</p>
               <p>for those in need</p> */}
-              <p>Backend Lead</p>
-              <p className="italic">Sep 2024 - Dec 2024</p>
+              <p>Software Engineer</p>
+              <p className="italic">Aug 2024 — Present</p>
             </div>
           </Card.Desc>
         </Card>
-        <Card reverse>
+        <Card>
           <Card.Cover>
             <div className="flex flex-col items-center text-center text-sm md:text-base">
-              <p>SPARKFIT</p>
+              <p>BASKIN</p>
+              <p>ENGINEERING</p>
+              <p>AT UCSC</p>
             </div>
           </Card.Cover>
           <Card.Desc>
             <div className="p-3 flex flex-col items-center justify-evenly text-xs md:text-sm md:text-nowrap text-center">
-              <p className="">ML Based Application</p>
-              <p className="italic">Jun 2024 - Aug 2024</p>
+              <p className="">Individual Tutor and Reader</p>
+              <p className="italic">Jan 2024 — Present</p>
+            </div>
+          </Card.Desc>
+        </Card>
+        <Card>
+          <Card.Cover>
+            <div className="flex flex-col items-center text-center text-sm md:text-base">
+              <p>BLUEPRINT</p>
+            </div>
+          </Card.Cover>
+          <Card.Desc>
+            <div className="p-3 flex flex-col items-center justify-evenly text-xs md:text-sm md:text-nowrap text-center">
+              <p className="">Software Engineer</p>
+              <p className="italic">Nov 2024 — Present</p>
             </div>
           </Card.Desc>
         </Card>

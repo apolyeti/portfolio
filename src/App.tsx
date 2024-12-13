@@ -2,8 +2,9 @@ import { useState, useEffect } from "react";
 import Sphere from "./components/Sphere";
 import NavBar from "./components/NavBar";
 import Skills from "./components/Skills";
-import Projects from "./components/Projects";
+import Work from "./components/Work";
 import Contact from "./components/Contact";
+import Projects from "./components/Projects";
 
 function Home() {
   const [headerLine1, setHeaderLine1] = useState("");
@@ -165,6 +166,7 @@ function Home() {
             </div>
           </div>
           <Skills />
+          <Work />
           <Projects />
           <Contact />
         </>
