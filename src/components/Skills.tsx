@@ -12,14 +12,12 @@ import {
 import { BiLogoGoLang } from "react-icons/bi";
 import { AiOutlinePython } from "react-icons/ai";
 import { SiPytorch } from "react-icons/si";
-import { AiOutlineJava } from "react-icons/ai";
-import { DiSwift } from "react-icons/di";
+import { AiOutlineJava, AiOutlineKubernetes } from "react-icons/ai";
+import { DiSwift, DiPostgresql } from "react-icons/di";
 import { FaRust } from "react-icons/fa";
-import { SiFlask } from "react-icons/si";
-import { SiTensorflow } from "react-icons/si";
+import { SiFlask, SiNginxproxymanager } from "react-icons/si";
 import { SiHuggingface } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
-import { IoGitBranchOutline } from "react-icons/io5";
 import { GoDatabase } from "react-icons/go";
 
 import useMeasure from "react-use-measure";
@@ -129,6 +127,10 @@ export default function Skills() {
       icon: <FaDocker size={40} />,
     },
     {
+      name: "Kubernetes",
+      icon: <AiOutlineKubernetes size={40} />,
+    },
+    {
       name: "AWS",
       icon: <FaAws size={40} />,
     },
@@ -137,16 +139,8 @@ export default function Skills() {
       icon: <GoDatabase size={40} />,
     },
     {
-      name: "Git",
-      icon: <IoGitBranchOutline size={40} />,
-    },
-    {
-      name: "Flask",
-      icon: <SiFlask size={40} />,
-    },
-    {
-      name: "TensorFlow",
-      icon: <SiTensorflow size={40} />,
+      name: "NGINX",
+      icon: <SiNginxproxymanager size={40} />,
     },
     {
       name: "PyTorch",
@@ -155,6 +149,10 @@ export default function Skills() {
     {
       name: "Hugging Face",
       icon: <SiHuggingface size={40} />,
+    },
+    {
+      name: "PostgreSQL",
+      icon: <DiPostgresql size={40} />,
     },
   ];
 
