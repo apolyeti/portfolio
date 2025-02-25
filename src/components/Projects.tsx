@@ -23,8 +23,7 @@ export default function Projects() {
               <p>for connecting communities</p>
               <p>amd requesting resources</p>
               <p>for those in need</p> */}
-              <p>Backend Lead</p>
-              <p className="italic">Sep 2024 - Dec 2024</p>
+              <p>BACKEND LEAD</p>
             </div>
           </Card.Desc>
         </Card>
@@ -36,8 +35,7 @@ export default function Projects() {
           </Card.Cover>
           <Card.Desc>
             <div className="p-3 flex flex-col items-center justify-evenly text-xs md:text-sm md:text-nowrap text-center">
-              <p className="">ML Based Application</p>
-              <p className="italic">Jun 2024 - Aug 2024</p>
+              <p className="">MACHINE LEARNING BASED APPLICATION</p>
             </div>
           </Card.Desc>
         </Card>

@@ -13,13 +13,11 @@ import { BiLogoGoLang } from "react-icons/bi";
 import { AiOutlinePython } from "react-icons/ai";
 import { SiPytorch } from "react-icons/si";
 import { AiOutlineJava, AiOutlineKubernetes } from "react-icons/ai";
-import { DiSwift, DiPostgresql } from "react-icons/di";
+import { DiSwift, DiPostgresql, DiRedis } from "react-icons/di";
 import { FaRust } from "react-icons/fa";
 import { SiNginxproxymanager } from "react-icons/si";
 import { SiHuggingface } from "react-icons/si";
 import { FaAws } from "react-icons/fa";
-import { GoDatabase } from "react-icons/go";
-
 import useMeasure from "react-use-measure";
 import { animate, useMotionValue, motion } from "framer-motion";
 
@@ -72,19 +70,19 @@ export default function Skills() {
 
   const leftIcons = [
     {
-      name: "JavaScript",
+      name: "JAVASCRIPT",
       icon: <RiJavascriptLine size={40} />,
     },
     {
-      name: "TypeScript",
+      name: "TYPESCRIPT",
       icon: <TbBrandTypescript size={40} />,
     },
     {
-      name: "Python",
+      name: "PYTHON",
       icon: <AiOutlinePython size={40} />,
     },
     {
-      name: "Golang",
+      name: "GOLANG",
       icon: <BiLogoGoLang size={40} />,
     },
     {
@@ -100,34 +98,34 @@ export default function Skills() {
       icon: <PiFileCSharpLight size={40} />,
     },
     {
-      name: "Java",
+      name: "JAVA",
       icon: <AiOutlineJava size={40} />,
     },
     {
-      name: "Swift",
+      name: "SWIFT",
       icon: <DiSwift size={40} />,
     },
     {
-      name: "Rust",
+      name: "RUST",
       icon: <FaRust size={40} />,
     },
   ];
 
   const rightIcons = [
     {
-      name: "Node.js",
+      name: "NODE.JS",
       icon: <FaNodeJs size={40} />,
     },
     {
-      name: "Next.js",
+      name: "NEXT.JS",
       icon: <RiNextjsLine size={40} />,
     },
     {
-      name: "Docker",
+      name: "DOCKER",
       icon: <FaDocker size={40} />,
     },
     {
-      name: "Kubernetes",
+      name: "KUBERNETES",
       icon: <AiOutlineKubernetes size={40} />,
     },
     {
@@ -135,23 +133,23 @@ export default function Skills() {
       icon: <FaAws size={40} />,
     },
     {
-      name: "SQL/NoSQL",
-      icon: <GoDatabase size={40} />,
+      name: "REDIS",
+      icon: <DiRedis size={40} />,
     },
     {
       name: "NGINX",
       icon: <SiNginxproxymanager size={40} />,
     },
     {
-      name: "PyTorch",
+      name: "PYTORCH",
       icon: <SiPytorch size={40} />,
     },
     {
-      name: "Hugging Face",
+      name: "HUGGING FACE",
       icon: <SiHuggingface size={40} />,
     },
     {
-      name: "PostgreSQL",
+      name: "POSTGRESQL",
       icon: <DiPostgresql size={40} />,
     },
   ];

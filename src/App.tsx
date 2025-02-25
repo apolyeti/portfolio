@@ -136,7 +136,7 @@ function Home() {
       {showPage && (
         <>
           <div className="flex flex-col justify-center h-screen" id="portfolio">
-            <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+            <div className="w-full flex flex-col md:flex-row items-center justify-center gap-6">
               <div className="flex md:flex-col flex-row gap-4 py-4 md:py-0 items-center">
                 <h1 className="text-5xl">ABOUT</h1>
                 <h1 className="text-5xl">ME</h1>
