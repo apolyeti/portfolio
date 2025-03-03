@@ -6,8 +6,8 @@ export default function Work() {
       id="projects"
       className="h-screen w-screen flex flex-col md:flex-row items-center justify-evenly">
       <div className="flex flex-col items-center justify-center gap-2 w-1/2">
-        <h1 className="">MY</h1>
-        <h1 className="">EXPERIENCES</h1>
+        <h1 className="">WHERE I'VE</h1>
+        <h1 className="">BEEN</h1>
       </div>
       <div className="flex flex-col items-center md:justify-center gap-4 md:w-1/2 w-full h-3/5 md:h-2/5">
         <Card>
@@ -18,7 +18,7 @@ export default function Work() {
           </Card.Cover>
           <Card.Desc>
             <div className="p-3 flex flex-col items-center justify-evenly text-xs md:text-sm md:text-nowrap text-center">
-              <p className="">SOFTWARE DEVELOPMENT ENGINEER INTERN</p>
+              <p className="">SOFTWARE ENGINEER INTERN</p>
               <p className="italic">JUN 2025 — SEP 2025</p>
             </div>
           </Card.Desc>

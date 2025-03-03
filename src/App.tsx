@@ -157,9 +157,10 @@ function Home() {
                   wide range of skills and experiences.
                 </p>
                 <p>
-                  As of now, my specialty lies in system design and
-                  optimization, but I'm always looking to learn and grow in new
-                  areas, as well as excel in the ones I'm already familiar with.
+                  I'm passionate about distributed systems and machine learning,
+                  specializing in building scalable architectures and advanced
+                  models. I'm also highly skilled in full-stack development and
+                  always eager to explore new technologies.
                 </p>
               </div>
               <div className="spacer"></div>

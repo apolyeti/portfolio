@@ -6,8 +6,8 @@ export default function Projects() {
       id="projects"
       className="h-screen w-screen flex flex-col md:flex-row-reverse items-center justify-evenly">
       <div className="flex flex-col items-center justify-center gap-2 w-1/2">
-        <h1 className="">MY</h1>
-        <h1 className="">PROJECTS</h1>
+        <h1 className="">WHAT I'VE</h1>
+        <h1 className="">WORKED ON</h1>
       </div>
       <div className="flex flex-col items-center md:justify-center gap-4 md:w-1/2 w-full h-3/5 md:h-2/5">
         <Card reverse>
