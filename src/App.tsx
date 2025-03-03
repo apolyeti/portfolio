@@ -29,7 +29,7 @@ function Home() {
     const fragment = window.location.hash;
 
     if (fragment) {
-      setHeaderLine1("HELLO, I");
+      setHeaderLine1("HELLO I");
       setHeaderLine2("AM ARVEEN");
       setIndex(4);
       setShowPage(true);
@@ -47,7 +47,7 @@ function Home() {
       return;
     }
 
-    const wordsLine1 = ["HELLO,", "I"];
+    const wordsLine1 = ["HELLO", "I"];
     const wordsLine2 = ["AM", "ARVEEN"];
 
     let currentWordDelay = wordDelay;
