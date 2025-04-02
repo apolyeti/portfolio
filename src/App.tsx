@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import NavBar from "./components/NavBar";
 import Sphere from "./components/Sphere";
 import Clock from "./components/Clock";
-import Skills from "./components/Skills";
 import Work from "./components/Work";
 import Projects from "./components/Projects";
 import Contact from "./components/Contact";
