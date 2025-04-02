@@ -4,21 +4,12 @@ import { RiJavascriptLine, RiNextjsLine } from "react-icons/ri";
 import { TbBrandTypescript } from "react-icons/tb";
 import { AiOutlineJava, AiOutlinePython } from "react-icons/ai";
 import { BiLogoGoLang } from "react-icons/bi";
-import {
-  PiFileCLight,
-  PiFileCppLight,
-  PiFileCSharpLight,
-} from "react-icons/pi";
+import { PiFileCLight, PiFileCppLight } from "react-icons/pi";
 import { DiSwift } from "react-icons/di";
 import { FaAws, FaDocker, FaNodeJs, FaRust } from "react-icons/fa6";
 import { GoDatabase } from "react-icons/go";
 import { IoGitBranchOutline } from "react-icons/io5";
-import {
-  SiFlask,
-  SiHuggingface,
-  SiPytorch,
-  SiTensorflow,
-} from "react-icons/si";
+import { SiFlask, SiPytorch, SiTensorflow } from "react-icons/si";
 
 export default function Skills() {
   const animation = { duration: 10000, easing: (t: unknown) => t };

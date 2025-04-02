@@ -106,6 +106,7 @@ const AsciiEffectComponent: React.FC<AsciiEffectComponentProps> = ({
     return () => {
       window.removeEventListener("resize", onWindowResize);
       renderer.dispose();
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       containerRef.current?.removeChild(effect.domElement);
     };
   }, [width, height]);
