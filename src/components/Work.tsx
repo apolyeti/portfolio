@@ -5,7 +5,7 @@ export default function Work() {
     <div
       id="projects"
       className="h-screen w-screen flex flex-col md:flex-row items-center justify-evenly">
-      <div className="flex flex-col items-center justify-center gap-2 w-1/2">
+      <div className="flex flex-col items-center justify-center gap-2 w-1/2 font-bold text-center">
         <h1 className="">WHERE I'VE</h1>
         <h1 className="">BEEN</h1>
       </div>
@@ -34,7 +34,7 @@ export default function Work() {
           <Card.Desc>
             <div className="p-3 flex flex-col items-center justify-evenly text-xs md:text-sm md:text-nowrap text-center">
               <p className="">INDIVIDUAL TUTOR AND READER</p>
-              <p className="italic">JAN 2024 — PRESENT</p>
+              <p className="italic">JAN 2024 — APR 2025</p>
             </div>
           </Card.Desc>
         </Card>

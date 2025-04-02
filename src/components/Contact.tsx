@@ -11,16 +11,17 @@ export default function Contact() {
       <div
         id="contact"
         className="flex flex-col md:flex-row items-center justify-evenly md:justify-center h-screen gap-8">
-        <div className="flex flex-col w-full md:w-1/3 text-center">
-          <h1 className="text-4xl">LET'S CHAT</h1>
-          <div className="flex flex-col p-2">
-            <h2>I'm always open to new opportunities!</h2>
-            <h2>I'm available on multiple platforms,</h2>
-            <h2>so please don't hesitate to reach</h2>
-            <h2>out to me on any of them.</h2>
+        <div className="flex flex-col w-1/2 md:w-1/3 text-center">
+          <h1 className="text-4xl font-bold">LET'S CHAT</h1>
+          <div className="flex flex-col p-2 w-full items-center justify-center text-center">
+            <h2>
+              I'm always open to new opportunities! I'm available on multiple
+              platforms, so please don't hesitate to reach out to me on any of
+              them.
+            </h2>
           </div>
         </div>
-        <div className="flex flex-col w-full items-center md:items-start md:w-1/4 gap-8">
+        <div className="flex flex-col w-1/3 items-start md:items-start md:w-1/4 gap-8">
           <div className="flex flex-row gap-2">
             <CiMail size={25} />
             <a

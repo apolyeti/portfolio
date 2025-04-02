@@ -5,7 +5,7 @@ export default function Projects() {
     <div
       id="projects"
       className="h-screen w-screen flex flex-col md:flex-row-reverse items-center justify-evenly">
-      <div className="flex flex-col items-center justify-center gap-2 w-1/2">
+      <div className="flex flex-col items-center justify-center gap-2 w-1/2 font-bold text-center">
         <h1 className="">WHAT I'VE</h1>
         <h1 className="">WORKED ON</h1>
       </div>

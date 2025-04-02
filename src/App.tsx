@@ -1,22 +1,22 @@
-import { useState, useEffect } from "react";
-import Sphere from "./components/Sphere";
+import { useEffect, useState } from "react";
 import NavBar from "./components/NavBar";
+import Sphere from "./components/Sphere";
+import Clock from "./components/Clock";
 import Skills from "./components/Skills";
 import Work from "./components/Work";
-import Contact from "./components/Contact";
 import Projects from "./components/Projects";
+import Contact from "./components/Contact";
 
 function Home() {
-  const [headerLine1, setHeaderLine1] = useState("");
-  const [headerLine2, setHeaderLine2] = useState("");
+  const line1Words = ["A", "SOFTWARE", "ENGINEER"];
+  const line2Words = ["BASED", "IN", "SEATTLE"];
+  const line3Words = ["MY", "NAME", "IS"];
+  const line4Words = ["ARVEEN", "AZHAND"];
+  const allWords = [...line1Words, ...line2Words, ...line3Words, ...line4Words];
 
-  const [age, setAge] = useState(0);
+  const [revealedCount, setRevealedCount] = useState(0);
   const [showPage, setShowPage] = useState(false);
-  const [index, setIndex] = useState(0);
-
-  const initialDelay = 900; // Initial delay before starting the animation
-  const wordDelay = 350; // Delay between each word
-
+  const [age, setAge] = useState(0);
   useEffect(() => {
     const birthDate = new Date("2003-12-12");
     const today = new Date();
@@ -25,74 +25,46 @@ function Home() {
     setAge(Math.abs(ageDate.getUTCFullYear() - 1970));
   }, []);
 
+  const initialDelay = 800;
+  const wordDelay = 150;
+
   useEffect(() => {
-    const fragment = window.location.hash;
-
-    if (fragment) {
-      setHeaderLine1("HELLO I");
-      setHeaderLine2("AM ARVEEN");
-      setIndex(4);
-      setShowPage(true);
-
-      // go to fragment
-      const element = document.getElementById(fragment.substring(1));
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-
-      setTimeout(() => {
-        window.history.replaceState(null, "", window.location.pathname);
-      }, 1000);
-
-      return;
+    if (revealedCount >= allWords.length) {
+      const timeout = setTimeout(() => {
+        setShowPage(true);
+      }, 150);
+      return () => clearTimeout(timeout);
     }
 
-    const wordsLine1 = ["HELLO", "I"];
-    const wordsLine2 = ["AM", "ARVEEN"];
+    const timeout = setTimeout(
+      () => {
+        setRevealedCount((prev) => prev + 1);
+      },
+      revealedCount === 0 ? initialDelay : wordDelay
+    );
 
-    let currentWordDelay = wordDelay;
+    return () => clearTimeout(timeout);
+  }, [revealedCount, allWords.length]);
 
-    // Adjust the delay if we are transitioning from "I" to "AM"
-    if (index === wordsLine1.length) {
-      currentWordDelay = 200; // Shorter delay specifically between "I" and "AM"
-    }
-
-    if (index === 0) {
-      // Start the first word with an initial delay
-      const timeoutId = setTimeout(() => {
-        setHeaderLine1(wordsLine1[0]);
-        setIndex(1);
-      }, initialDelay);
-      return () => clearTimeout(timeoutId);
-    }
-
-    if (index > 0 && index < wordsLine1.length) {
-      // Continue with the rest of the words in the first line
-      const timeoutId = setTimeout(() => {
-        setHeaderLine1((prev) => prev + " " + wordsLine1[index]);
-        setIndex(index + 1);
-      }, wordDelay);
-      return () => clearTimeout(timeoutId);
-    } else if (
-      index >= wordsLine1.length &&
-      index < wordsLine1.length + wordsLine2.length
-    ) {
-      // Start displaying words for the second line
-      const timeoutId = setTimeout(() => {
-        const wordIndex = index - wordsLine1.length;
-        setHeaderLine2(
-          (prev) => (prev ? prev + " " : "") + wordsLine2[wordIndex]
+  const renderLine = (words: string[], offset: number) => (
+    <h1 className="text-3xl md:text-4xl lg:text-7xl font-bold text-center">
+      {words.map((word, i) => {
+        const globalIndex = offset + i;
+        const isVisible = globalIndex < revealedCount;
+        return (
+          <span
+            key={globalIndex}
+            className={`inline-block mr-3 `}
+            style={{
+              opacity: isVisible ? 1 : 0,
+              visibility: isVisible ? "visible" : "hidden",
+            }}>
+            {word}
+          </span>
         );
-        setIndex(index + 1);
-      }, currentWordDelay);
-      return () => clearTimeout(timeoutId);
-    }
-
-    if (index === wordsLine1.length + wordsLine2.length) {
-      // Show the page after the last word has been displayed
-      setShowPage(true);
-    }
-  }, [index]);
+      })}
+    </h1>
+  );
 
   const scrollDown = () => {
     const portfolio = document.getElementById("portfolio");
@@ -102,76 +74,80 @@ function Home() {
   };
 
   return (
-    <div className="overflow-x-hidden">
-      <NavBar /> {/* Always render the NavBar */}
-      <div className="flex flex-col md:justify-between h-screen p-4" id="home">
-        <div className="flex h-1/5 md:h-0"></div>
-        <div className="flex flex-col md:flex-row justify-center md:justify-between">
-          <div className="flex flex-col justify-center md:items-start items-center gap-4">
-            <h1
-              className="text-4xl md:text-7xl"
-              style={{ opacity: headerLine1 ? 1 : 0 }}>
-              {headerLine1 || "WELCOME TO"}
-            </h1>
-            <h1
-              className="text-4xl md:text-7xl"
-              style={{ opacity: headerLine2 ? 1 : 0 }}>
-              {headerLine2 || "MY PORTFOLIO"}
-            </h1>
-          </div>
-
-          <div
-            className="w-full md:w-2/5 h-5/6 md:h-full flex justify-center items-center"
-            style={{ opacity: showPage ? 1 : 0 }}>
-            <Sphere />
-          </div>
+    <div className="overflow-x-hidden" id="home">
+      <NavBar />
+      <div className="flex flex-col items-center min-h-screen">
+        <div className="text-center mt-20">
+          {renderLine(line1Words, 0)}
+          {renderLine(line2Words, line1Words.length)}
+          {renderLine(line3Words, line1Words.length + line2Words.length)}
+          {renderLine(
+            line4Words,
+            line1Words.length + line2Words.length + line3Words.length
+          )}
         </div>
-        <button
-          style={{ opacity: showPage ? 1 : 0 }}
-          disabled={!showPage}
-          onClick={scrollDown}>
-          <p className="text-2xl">LEARN MORE</p>
-        </button>
-      </div>
-      {showPage && (
-        <>
-          <div className="flex flex-col justify-center h-screen" id="portfolio">
-            <div className="w-full flex flex-col md:flex-row items-center justify-center gap-6">
-              <div className="flex md:flex-col flex-row gap-4 py-4 md:py-0 items-center">
-                <h1 className="text-5xl">ABOUT</h1>
-                <h1 className="text-5xl">ME</h1>
+        {showPage && (
+          <div>
+            <div className="flex flex-col md:flex-row justify-evenly items-center w-full">
+              <div>
+                <Sphere />
               </div>
-              <div className="flex flex-col w-full md:w-1/3 md:text-left text-center h-full gap-4 px-4">
-                <p className="">
-                  I'm Arveen Azhand, a {age}-year-old software engineer based in
-                  Seattle, WA.
-                </p>
-                <p>
-                  I'm currently attending the University of California, Santa
-                  Cruz, pursuing a Bachelor of Science degree in Computer
-                  Science.
-                </p>
-                <p className="">
-                  Throughout my journey in the world of software development,
-                  I've had many different interests and passions, giving me a
-                  wide range of skills and experiences.
-                </p>
-                <p>
-                  I'm passionate about distributed systems and machine learning,
-                  specializing in building scalable architectures and advanced
-                  models. I'm also highly skilled in full-stack development and
-                  always eager to explore new technologies.
-                </p>
+              <div>
+                <Clock />
               </div>
-              <div className="spacer"></div>
             </div>
           </div>
-          <Skills />
-          <Work />
-          <Projects />
-          <Contact />
-        </>
-      )}
+        )}
+        {showPage && (
+          <button
+            style={{ opacity: showPage ? 1 : 0 }}
+            disabled={!showPage}
+            onClick={scrollDown}>
+            <p className="text-xl mt-2">LEARN MORE</p>
+          </button>
+        )}
+        {showPage && (
+          <>
+            <div
+              className="flex flex-col justify-center h-screen"
+              id="portfolio">
+              <div className="w-full flex flex-col md:flex-row items-center justify-center gap-6">
+                <div className="flex md:flex-col flex-row gap-4 py-4 md:py-0 items-center font-bold">
+                  <h1 className="text-5xl">ABOUT</h1>
+                  <h1 className="text-5xl">ME</h1>
+                </div>
+                <div className="flex flex-col w-full md:w-1/3 md:text-left text-center h-full gap-4 px-4">
+                  <p className="">
+                    Hi! I'm Arveen, a {age}-year-old software engineer living in
+                    Seattle, WA.
+                  </p>
+                  <p>
+                    I'm currently attending the University of California, Santa
+                    Cruz, pursuing a Bachelor of Science degree in Computer
+                    Science.
+                  </p>
+                  <p className="">
+                    Throughout my journey in the world of software development,
+                    I've had many different interests and passions, giving me a
+                    wide range of skills and experiences.
+                  </p>
+                  <p>
+                    I'm passionate about distributed systems and machine
+                    learning, specializing in building scalable architectures
+                    and advanced models. I'm also highly skilled in full-stack
+                    development and always eager to explore new technologies.
+                  </p>
+                </div>
+                <div className="spacer"></div>
+              </div>
+            </div>
+            <Work />
+            {/* <Skills /> */}
+            <Projects />
+            <Contact />
+          </>
+        )}
+      </div>
     </div>
   );
 }

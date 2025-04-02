@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  font-family: Monoid, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Geist, Monoid, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
   background-color: #f8f9fa;
 
@@ -28,6 +28,20 @@ body {
   font-family: Monoid;
   src: url("./assets/fonts/Monoid/MonoidNerdFont-Italic.ttf");
   font-style: italic;
+}
+
+@font-face {
+    font-family: Geist;
+    src: url('./assets/fonts/Geist/Geist.ttf');
+    font-style: Black;
+    font-weight: 1000;
+}
+
+@font-face {
+    font-family: Geist;
+    src: url('./assets/fonts/Geist/Geist.ttf');
+    font-style: Light;
+    font-weight: 500;
 }
 
 h1,
