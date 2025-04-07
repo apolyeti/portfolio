@@ -21,7 +21,7 @@ export default function Contact() {
             </h2>
           </div>
         </div>
-        <div className="flex flex-col w-1/3 items-start md:items-start md:w-1/4 gap-8">
+        <div className="flex flex-col w-1/3 items-center md:items-start md:w-1/4 gap-8">
           <div className="flex flex-row gap-2">
             <CiMail size={25} />
             <a
